@@ -156,10 +156,9 @@
     }
 
     var updateList = () => {
-        const markup = `${filteredBhajans.map(bhajan => `<div class="item"><a href="./bhajan.html?b=${bhajan.vol}-${bhajan.pn}"><span style="float: left;">${bhajan.hin}</span><span style="float: right;">${bhajan.vol || ''} - ${bhajan.pn || ''}</span></a></div>`).join('<div style="clear:both; width:0; height:0"></div>')}`;
+     	const markup = `${filteredBhajans.map(bhajan => `<div class="item"><a href="./bhajan.html?b=${bhajan.dir}-${bhajan.id}"><span style="float: left;">${bhajan.hin}</span></a></div>`).join('')}`;
         listElement.innerHTML = markup;
     }
-
 
     var onDeviceReady = () => {
         searchBox = document.getElementById('searchBox');
