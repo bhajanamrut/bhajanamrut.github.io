@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* CSS for the container */
+        #embeddedContent {
+            margin: 0 auto;
+            border: 4px solid #c3c3c3; /* Border style */
+            border-radius: 10px; /* Border radius for rounded corners */
+            padding: 10px; /* Padding inside the border */
+            width: fit-content; /* Adjusts container width to fit content */
+            font-size: x-large;
+        }
+			td {
+			  /*border: 1px solid black;
+			  border-collapse: collapse;*/
+			  font-size: 18px;
+			  padding: 8px 10px;
+			}
+			th {
+				padding: 0px;
+			}
+			
+			table {
+				border-collapse: separate;
+				border-spacing: 0;
+				border: 5px solid orange; /* Set your desired border style */
+				border-radius: 10px; /* Adjust the radius as needed */
+				
+			}
+			.header {
+				padding: 10px 50px;
+				margin: -1px;
+				font-size: 28px;
+				background-color: orange;
+				border-top-left-radius: 10px;
+				border-top-right-radius: 10px;
+			}
+			
+			tr td:nth-child(2) {
+				text-decoration: underline;
+				text-decoration-color: #CECECE;
+				text-decoration-thickness: 3px;
+			}
+			
+			tr td:nth-child(1) {
+				font-weight: bold;
+			}
+			
+			tr:nth-child(2) td {
+				padding-top: 15px; 
+			}
+	
+			tr:nth-child(6) td {
+				padding-bottom: 15px; 
+			}				
+        
+    </style>
+			
+    </style>
+</head>
+<body>
+    <div id="embeddedContent">
+		
+	</div>
+	<script>
+        // Function to get URL parameters
+        function getParameterByName(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Get the name parameter from the URL
+        
+		const name = getParameterByName('name') || 'पारायण करणारेचे नावं';
+		const regno = getParameterByName('regno') || 'नोंदणी क्रमांक'; 
+		const needpothi = (getParameterByName('needpothi')?.toLowerCase() === 'yes'?'पाहिजे':'स्वताची आहे') || 'स्वताची आहे/पाहिजे'; 
+		const needchair = (getParameterByName('needchair')?.toLowerCase() === 'yes'?'कुर्सी वर':'खाली बसून') || 'कुर्सी वर/खाली बसून'; 
+		const section = (getParameterByName('section')?.toUpperCase()) || 'बैठक कक्ष'; 
+
+        // Create the entire HTML structure as a formatted string
+        const htmlContent = `
+		<table>
+			<tr  >
+				<th colspan="3">
+					<div class="header">
+					भाग्यनगर महापारायण सोहळा 
+					</div>
+				</th>
+			</tr>
+			<tr>
+				<td>Name/नावं :</td><td>${name}</td><td></td>
+			</tr>
+			<tr>
+				<td>Reg.No./नोंदणी क्र. :</td><td>${regno}</td><td></td>
+			</tr>
+			<tr>
+				<td>Book/पोथी : </td><td>${needpothi}</td><td></td>
+			</tr>
+			<tr>
+				<td>Sitting/बैठकी :</td><td>${needchair}</td><td></td>
+			</tr>
+			<tr>
+				<td>Section/बैठक कक्ष :</td><td>${section}</td><td></td>
+			</tr>
+		</table>
+        `;
+
+        // Insert the formatted HTML into the content div
+        document.getElementById('embeddedContent').innerHTML = htmlContent;
+    </script>
+	
+
+    
+</body>
+</html>
