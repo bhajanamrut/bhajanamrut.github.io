@@ -120,9 +120,15 @@
             event.preventDefault(); // Prevent default navigation
             const summary = generateSummary();
             const summaryStr = `
-            पुरुष: ${summary.Gender.M}, महिला: ${summary.Gender.F} \r\n 
-            बैठकी - कुर्सी वर: ${summary.NeedChair.Yes}   खाली बसून: ${summary.NeedChair.No}, unknown : ${summary.NeedChair[""]} \r\n 
-            पोथी  - पाहिजे:  ${summary.NeedPothi.Yes}, स्वताची आहे: ${summary.NeedPothi.No}, unknown : ${summary.NeedPothi[""]} \r\n 
+            पुरुष: ${summary.Gender.M}, महिला: ${summary.Gender.F} \r\n \r\n 
+            बैठकी - \r\n 
+             कुर्सी वर: ${summary.NeedChair.Yes} \r\n 
+             खाली बसून: ${summary.NeedChair.No}, \r\n 
+             unknown : ${summary.NeedChair[""]} \r\n \r\n 
+            पोथी - 
+             पाहिजे: ${summary.NeedPothi.Yes}, \r\n 
+             स्वताची आहे: ${summary.NeedPothi.No}, \r\n 
+             unknown : ${summary.NeedPothi[""]} \r\n 
             `;
             alert(summaryStr);
         }
