@@ -119,18 +119,20 @@
         function showSummary(event) {
             event.preventDefault(); // Prevent default navigation
             const summary = generateSummary();
-            const summaryStr = `पुरुष: ${summary.Gender.M}, महिला: ${summary.Gender.F} 
-            
-            बैठकी - 
-             कुर्सी वर: ${summary.NeedChair.Yes} 
-             खाली बसून: ${summary.NeedChair.No}, 
-             unknown : ${summary.NeedChair[""]} 
-             
-            पोथी - 
-             पाहिजे: ${summary.NeedPothi.Yes}, 
-             स्वताची आहे: ${summary.NeedPothi.No}, 
-             unknown : ${summary.NeedPothi[""]} 
+            const summaryStr = `    
+    पुरुष: ${summary.Gender.M}, महिला: ${summary.Gender.F} 
+
+    बैठकी -
+        कुर्सी वर: ${summary.NeedChair.Yes} 
+        खाली बसून: ${summary.NeedChair.No},  
+        unknown : ${summary.NeedChair[""]} 
+
+    पोथी - 
+        पाहिजे: ${summary.NeedPothi.Yes}, 
+        स्वताची आहे: ${summary.NeedPothi.No}, 
+        unknown : ${summary.NeedPothi[""]} 
             `;
+    
             alert(summaryStr);
         }
 
