@@ -66,7 +66,7 @@
     <div class="container">
         <span style="font-size: 26px; padding: 10px">पारायण नोंदणी व्यवस्थापन </span>
         <div style="font-size: 20px; padding: 10px">
-            <span>नोंदणी संख्या: </span><span id="regCount">...</span><a href="#" style="padding: 10px;" onclick="showSummary(event)">  विवरण </a>
+            <span>नोंदणी संख्या: </span><span id="regCount">...</span><a href="#" style="padding: 10px;" onclick="showSummary(event)"> विवरण </a>
         </div>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSfgjBgdoac8x4Wmh2-t956KQc7ew3VsgNblQks2f-E3GDstNg/viewform" style="padding: 10px; padding-bottom: 20px;">नवीन नोंदणी करायला इथे क्लिक करा ... </a>
         <div class="sb-container">
@@ -119,8 +119,7 @@
         function showSummary(event) {
             event.preventDefault(); // Prevent default navigation
             const summary = generateSummary();
-            const summaryStr = `
-            पुरुष: ${summary.Gender.M}, महिला: ${summary.Gender.F} 
+            const summaryStr = `पुरुष: ${summary.Gender.M}, महिला: ${summary.Gender.F} 
             
             बैठकी - 
              कुर्सी वर: ${summary.NeedChair.Yes} 
