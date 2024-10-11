@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parayan Registrations Management</title>
+    <title>Parayan Registrations Management </title>
 </head>
 <style>
     .item {
@@ -64,8 +64,11 @@
 
 <body>
     <div class="container">
-        <span style="font-size: 20px; padding: 10px">पारायण नोंदणी व्यवस्थापन </span>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfgjBgdoac8x4Wmh2-t956KQc7ew3VsgNblQks2f-E3GDstNg/viewform" style="padding: 10px;">नवीन नोंदणी करायला इथे क्लिक करा ... </a>
+        <span style="font-size: 26px; padding: 10px">पारायण नोंदणी व्यवस्थापन </span>
+        <div style="font-size: 20px; padding: 10px">
+            <span>नोंदणी संख्या: </span><span id="regCount">...</span><a href="#" style="padding: 10px;" onclick="showSummary(event)">  विवरण </a>
+        </div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfgjBgdoac8x4Wmh2-t956KQc7ew3VsgNblQks2f-E3GDstNg/viewform" style="padding: 10px; padding-bottom: 20px;">नवीन नोंदणी करायला इथे क्लिक करा ... </a>
         <div class="sb-container">
             <input id="searchBox" type="search" placeholder="श्री गुरुदत्त भजन मंडळ ..." style="width: 100%; height: 32px;font-size: 20px; margin: 5px;">
             <button id="searchBtn" style="position: absolute;width: 16%;height: 38px;right: 0px; display: none;">                    
@@ -78,11 +81,71 @@
         
     </div>
     <script>
+        var dataset;
+        const propmap = {
+                'NAME': 0,
+                'ADDRESS': 1,
+                'REGION': 2,
+                'GENDER': 3,
+                'AGE': 4,
+                'NEEDCHAIR': 5,
+                'MOBILENO': 6,
+                'NEEDPOTHI': 7,
+                'EDITURL': 8,
+                'INCOMPLETE': 9,
+                'REGID': 10,
+                'ENGNAME': 11
+            };
+
         function updateList() {
             fetchAndUpdate();
         }
 
+        function getData(obj, prop){
+            if(typeof obj === 'number'){
+                return dataset[obj][prop];
+            }
+            else {
+                return obj[prop];
+            }
+        }
+        
+        function setData(index, prop, val){
+            dataset[index][prop] = val;
+        }
+
         window.addEventListener('load', updateList);
+
+        function showSummary(event) {
+            event.preventDefault(); // Prevent default navigation
+            const summary = generateSummary();
+            const summaryStr = `
+            पुरुष: ${summary.Gender.M}, महिला: ${summary.Gender.F} \r\n 
+            बैठकी - कुर्सी वर: ${summary.NeedChair.Yes}   खाली बसून: ${summary.NeedChair.No}, unknown : ${summary.NeedChair[""]} \r\n 
+            पोथी  - पाहिजे:  ${summary.NeedPothi.Yes}, स्वताची आहे: ${summary.NeedPothi.No}, unknown : ${summary.NeedPothi[""]} \r\n 
+            `;
+            alert(summaryStr);
+        }
+
+        function generateSummary() {
+            const summary = dataset.reduce((acc, obj) => {
+                // Count occurrences of property1
+                const needChair = getData(obj, propmap.NEEDCHAIR);
+                acc.NeedChair[needChair] = (acc.NeedChair[needChair] || 0) + 1;
+
+                // Count occurrences of property2
+                const needPothi = getData(obj, propmap.NEEDPOTHI);
+                acc.NeedPothi[needPothi] = (acc.NeedPothi[needPothi] || 0) + 1;
+
+                const gender = getData(obj, propmap.GENDER);
+                acc.Gender[gender] = (acc.Gender[gender] || 0) + 1;
+
+
+                return acc;
+                }, { NeedChair: {}, NeedPothi: {}, Gender: {} }); 
+
+                return summary;
+            }
 
         function fetchAndUpdate(){
             const sheetId = '1sVZ1d_yMRcu3STWN_W1CV2CCqj5B24McPH76jAb0kjQ'; // Replace with your actual sheet ID
@@ -101,6 +164,8 @@
                 })
                 .then(data => {
                     console.log('Sheet Data:', data.values); // Log the values in the sheet
+                    dataset = data.values;
+                    document.getElementById('regCount').innerHTML = data.values.length;
                     renderList(massageData(data.values));
                 })
                 .catch(error => {
@@ -110,7 +175,16 @@
 
         function massageData(data){
             for(var i=0; i<data.length; i++) {
-                data[i][10] = String(i).padStart(4, '0');
+                setData(i, propmap.REGID, String(i+1).padStart(4, '0'))
+                if(getData(i, propmap.REGION) == '' //region
+                    || getData(i, propmap.GENDER) == '' //gender
+                    || getData(i, propmap.NEEDCHAIR) == '' //need chair 
+                    || getData(i, propmap.MOBILENO) == '' //mobile
+                    || getData(i, propmap.NEEDPOTHI) == '' //need pothi
+                ) {
+                    setData(i, propmap.INCOMPLETE, true); //isIncomplete
+                }
+                /*data[i][10] = String(i+1).padStart(4, '0');
                 if(data[i][2] == '' //region
                     || data[i][3] == '' //gender
                     || data[i][5] == '' //need chair 
@@ -118,21 +192,21 @@
                     || data[i][7] == '' //need pothi
                 ) {
                     data[i][9] = "1"; //isIncomplete
-                }
+                }*/
             }
             return data;
         }
 
-        function renderList(regData){
+        function renderList(){
             const listElement = document.getElementById('RegList');
             //const markup = `${filteredBhajans.map(regData => `<div class="item"><a href="./bhajan.html?b=${bhajan.dir}-${bhajan.id}"><span style="float: left;">${bhajan.hin}</span><span style="float: right;">${bhajan.dir} - ${bhajan.id.split('.')[0] }</span></a></div>`).join('')}`;
-            const markup = `${regData.map(reg => `<div class="item"> 
+            const markup = `${dataset.map(reg => `<div class="item"> 
                 ${reg[9]?'<span class="warning">&#9888</span>':'<span class="success">&#10003</span>'} 
-                <span style="float: left;">${reg[0]} 
-                    <a href='${reg[8]}' style="display: ${reg[9]?'inline':'none'}"> Update</a>
-                    <a href='./idcard.html?name=${reg[0]}&regno=${reg[10]}&needchair=${reg[5]}&needpothi=${reg[7]}&section=To Be alloted' style="display: ${reg[9]?'none':'inline'}"> Id-Card</a>
+                <span style="float: left;">${getData(reg, propmap.NAME)} 
+                    <a href='${getData(reg, propmap.EDITURL)}' style="display: ${getData(reg, propmap.INCOMPLETE)?'inline':'none'}"> Update</a>
+                    <a href='./idcard.html?name=${getData(reg, propmap.NAME)}&regno=${getData(reg, propmap.REGID)}&needchair=${getData(reg, propmap.NEEDCHAIR)}&needpothi=${getData(reg, propmap.NEEDPOTHI)}&section=To Be alloted' style="display: ${getData(reg, propmap.INCOMPLETE)?'none':'inline'}"> Id-Card</a>
                     </span>
-                <span style="float: right;">${reg[6]}</span></div>`
+                <span style="float: right;">${getData(reg, propmap.MOBILENO)}</span></div>`
             ).join('')}`;
             listElement.innerHTML = markup;
         }
