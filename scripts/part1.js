@@ -185,7 +185,7 @@
  { eng: 'mi tuza bhutya khara', hin: 'मी तुझा भुत्या खरा', dir: '1', id: '87.2' },
  { eng: 'ude ude ga ambabai - mazi tuljapurchi aai', hin: 'उदे उदे ग अंबाबाई - माझी तुळजापूरची आई', dir: '1', id: '88.1' },
  { eng: 'bhaktokon darshan de gayi re', hin: 'भक्तोकों दर्शन दे गई रे', dir: '1', id: '89.1' },
- { eng: 'lallati bhandar', hin: 'लल्लाटी भंडार', dir: '1', id: '90.1' },
+ { eng: 'lallati bhandar nadichya palyad', hin: 'लल्लाटी भंडार', dir: '1', id: '90.1' },
  { eng: 'karu ya udo udo udo ambabaicha', hin: 'करु या उदो उदो उदो अंबाबाईचा', dir: '1', id: '91.1' },
  { eng: 'ambe tujhya darshanachi mala zali ghai', hin: 'अंबे तुझ्या दर्शनाची मला झाली घाई', dir: '1', id: '92.1' },
  { eng: 'mai meri o mai meri, sunle tu binti hamari', hin: 'मैया मेरी ओ मैया मेरी, सुनले तू बिनती हमारी', dir: '1', id: '92.2' },
