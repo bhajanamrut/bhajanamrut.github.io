@@ -71,7 +71,7 @@
  { eng: 'vitthal-vitthal smare velo vela', hin: 'विठ्ठल - विठ्ठल स्मरे वेळो वेळा', dir: '1', id: '31.1' },
  { eng: 'janan kashala dur majla ithch pandharpur', hin: 'जाणं कशाला दूर मजला इथचं पंढरपूर', dir: '1', id: '31.2' },
  { eng: 'udand dekhile, udand aikile', hin: 'उदंड देखिले, उदंड ऐकीले', dir: '1', id: '32.1' },
- { eng: 'kaya hi pandhari atma ha vitthal avadine bhave hari nam ghesi', hin: 'काया ही पंढरी आत्मा हा विठल आवडीने भावे हरी नाम घेसी', dir: '1', id: '32.2' },
+ { eng: 'kaya hi pandhari atma ha vitthal', hin: 'काया ही पंढरी आत्मा हा विठल', dir: '1', id: '32.2' },
  { eng: 'avadine bhave hari nam ghesi', hin: 'आवडीने भावे हरी नाम घेसी', dir: '1', id: '33.1' },
  { eng: 'vahe chandrabhaga tuka dang bhajanat', hin: 'वाहे चंद्रभागा तुका दंग भजनात', dir: '1', id: '33.2' },
  { eng: 'tal bole chipalila', hin: 'टाळ बोले चिपळीला ..', dir: '1', id: '34.1' },
