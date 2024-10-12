@@ -203,7 +203,7 @@
  { eng: 'udo udo udo mauli ambabai', hin: 'उदो उदो उदो माऊली अंबाबाई', dir: '1', id: '100.1' },
  { eng: 'tera sahara ambe ma mujhe tera sahara', hin: 'तेरा सहारा अंबे माँ मुझे तेरा सहारा', dir: '1', id: '100.2' },
  { eng: 'mai balak tu mata sherawaliye', hin: 'मै बालक तु माता शेरावालीये', dir: '1', id: '101.1' },
- { eng: 'harivi sadi g shome majhya aaila', hin: 'हरिवी साडी ग शोमें माझ्या आईला.', dir: '1', id: '102.1' },
+ { eng: 'hiravi sadi g shome majhya aaila', hin: 'हिरवी साडी ग शोमें माझ्या आईला.', dir: '1', id: '102.1' },
  { eng: 'mangal karti aayi hai maiya, mangal karya karegi maiya', hin: 'मंगल करती आयी है मैयाँ, मंगल कार्य करेगी मैयाँ,', dir: '1', id: '102.2' },
  { eng: 'tumbin mori kaun khabar le', hin: 'तुमबिन मोरी कौन खबर ले', dir: '1', id: '103.1' },
  { eng: 'mohan pyare ko tune na jana re', hin: 'मोहन प्यारे को तुने न जाना रे', dir: '1', id: '103.2' },
