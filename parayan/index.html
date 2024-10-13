@@ -33,7 +33,6 @@
         align-items: center; /* Vertically center the image */
         padding: 5px 10px; /* Padding around the image */
         background-color: #ffffff; /* Example background for the image container */
-        display: none;
     }
 
     .content {
@@ -66,11 +65,12 @@
     <div class="container">
         <span style="font-size: 26px; padding: 10px">पारायण नोंदणी व्यवस्थापन </span>
         <div style="font-size: 20px; padding: 10px">
-            <span>नोंदणी संख्या: </span><span id="regCount">...</span><a href="#" style="padding: 10px;" onclick="showSummary(event)"> विवरण </a>
+            <span>नोंदणी संख्या: </span><span id="regCount">...</span><a href="#" style="padding: 10px;" onclick="showSummary(event)">  विवरण </a>
         </div>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSfgjBgdoac8x4Wmh2-t956KQc7ew3VsgNblQks2f-E3GDstNg/viewform" style="padding: 10px; padding-bottom: 20px;">नवीन नोंदणी करायला इथे क्लिक करा ... </a>
+        <span>(please ensure that it is not already in registration list)</span>
         <div class="sb-container">
-            <input id="searchBox" type="search" placeholder="श्री गुरुदत्त भजन मंडळ ..." style="width: 100%; height: 32px;font-size: 20px; margin: 5px;">
+            <input id="searchBox" type="search" placeholder="Search by phone number ..." style="width: 100%; height: 32px;font-size: 20px; margin: 5px;">
             <button id="searchBtn" style="position: absolute;width: 16%;height: 38px;right: 0px; display: none;">                    
             </button>
         </div>
@@ -81,7 +81,15 @@
         
     </div>
     <script>
+        
         var dataset;
+        var filteredset;
+        var timeout;
+        var timeout;
+        var evtdata;
+        var cancel = false;
+        var busy = false;
+
         const propmap = {
                 'NAME': 0,
                 'ADDRESS': 1,
@@ -97,9 +105,14 @@
                 'ENGNAME': 11
             };
 
-        function updateList() {
+        function onLoad() {
+            searchBox = document.getElementById('searchBox');
+            //listElement = document.getElementById('DataList');
+            searchBox.addEventListener('input', delayedSearch, false);
             fetchAndUpdate();
         }
+
+        window.addEventListener('load', onLoad, false);
 
         function getData(obj, prop){
             if(typeof obj === 'number'){
@@ -113,8 +126,6 @@
         function setData(index, prop, val){
             dataset[index][prop] = val;
         }
-
-        window.addEventListener('load', updateList);
 
         function showSummary(event) {
             event.preventDefault(); // Prevent default navigation
@@ -132,7 +143,6 @@
         स्वताची आहे: ${summary.NeedPothi.No}, 
         unknown : ${summary.NeedPothi[""]} 
             `;
-    
             alert(summaryStr);
         }
 
@@ -173,9 +183,11 @@
                 })
                 .then(data => {
                     console.log('Sheet Data:', data.values); // Log the values in the sheet
-                    dataset = data.values;
+                    dataset = data.values
+                    dataset = massageData(data.values);
+                    filteredset = dataset;
                     document.getElementById('regCount').innerHTML = data.values.length;
-                    renderList(massageData(data.values));
+                    updateList();
                 })
                 .catch(error => {
                     console.error('Error fetching data:', error);
@@ -193,32 +205,88 @@
                 ) {
                     setData(i, propmap.INCOMPLETE, true); //isIncomplete
                 }
-                /*data[i][10] = String(i+1).padStart(4, '0');
-                if(data[i][2] == '' //region
-                    || data[i][3] == '' //gender
-                    || data[i][5] == '' //need chair 
-                    || data[i][6] == '' //mobile
-                    || data[i][7] == '' //need pothi
-                ) {
-                    data[i][9] = "1"; //isIncomplete
-                }*/
+
             }
             return data;
         }
 
-        function renderList(){
-            const listElement = document.getElementById('RegList');
-            //const markup = `${filteredBhajans.map(regData => `<div class="item"><a href="./bhajan.html?b=${bhajan.dir}-${bhajan.id}"><span style="float: left;">${bhajan.hin}</span><span style="float: right;">${bhajan.dir} - ${bhajan.id.split('.')[0] }</span></a></div>`).join('')}`;
-            const markup = `${dataset.map(reg => `<div class="item"> 
-                ${reg[9]?'<span class="warning">&#9888</span>':'<span class="success">&#10003</span>'} 
-                <span style="float: left;">${getData(reg, propmap.NAME)} 
-                    <a href='${getData(reg, propmap.EDITURL)}' style="display: ${getData(reg, propmap.INCOMPLETE)?'inline':'none'}"> Update</a>
-                    <a href='./idcard.html?name=${getData(reg, propmap.NAME)}&regno=${getData(reg, propmap.REGID)}&needchair=${getData(reg, propmap.NEEDCHAIR)}&needpothi=${getData(reg, propmap.NEEDPOTHI)}&section=To Be alloted' style="display: ${getData(reg, propmap.INCOMPLETE)?'none':'inline'}"> Id-Card</a>
-                    </span>
-                <span style="float: right;">${getData(reg, propmap.MOBILENO)}</span></div>`
-            ).join('')}`;
-            listElement.innerHTML = markup;
+        function updateList(){
+            if(filteredset){
+                var dataset = filteredset;
+                const listElement = document.getElementById('RegList');
+                //const markup = `${filteredBhajans.map(regData => `<div class="item"><a href="./bhajan.html?b=${bhajan.dir}-${bhajan.id}"><span style="float: left;">${bhajan.hin}</span><span style="float: right;">${bhajan.dir} - ${bhajan.id.split('.')[0] }</span></a></div>`).join('')}`;
+                const markup = `${dataset.map(reg => `<div class="item"> 
+                    ${reg[9]?'<span class="warning">&#9888</span>':'<span class="success">&#10003</span>'} 
+                    <span style="float: left;">${getData(reg, propmap.NAME)} 
+                        <a href='${getData(reg, propmap.EDITURL)}' style="display: ${getData(reg, propmap.INCOMPLETE)?'inline':'none'}"> Update</a>
+                        <a href='./idcard.html?name=${getData(reg, propmap.NAME)}&regno=${getData(reg, propmap.REGID)}&needchair=${getData(reg, propmap.NEEDCHAIR)}&needpothi=${getData(reg, propmap.NEEDPOTHI)}&section=To Be alloted' style="display: ${getData(reg, propmap.INCOMPLETE)?'none':'inline'}"> Id-Card</a>
+                        </span>
+                    <span style="float: right;">${getData(reg, propmap.MOBILENO)}</span></div>`
+                ).join('')}`;
+                listElement.innerHTML = markup;
+            }
         }
+
+        var delayedSearch = (evt) => {
+        cancel = true;
+        clearTimeout(timeout);
+        timeout = 0;
+        evtdata = evt;
+        //timeouts.push(setTimeout(onSearch, 1));
+        var startSearch = () => {
+            if(!busy){
+                clearTimeout(timeout);
+                onSearch();
+            }
+            else{ 
+                timeout = setTimeout(startSearch, 250);
+            }
+        }
+
+            startSearch();
+        }
+
+        var onSearch = async(evt) => {
+        cancel = false;
+        busy = true;
+        evt = evtdata;
+        var searchKey = evt.target.value;
+        if (!searchKey || searchKey === '') {
+            filteredset = dataset;
+            updateList();
+        }
+        else {
+            filteredset = [];
+
+            if(!cancel && filteredset.length == 0){
+                filteredset = await  getFilterPromise( () => filterList(searchKey, propmap.MOBILENO, dataset));
+            }
+            if(!cancel){
+                updateList();
+            }
+        }
+        busy = false;
+    }
+
+    var getFilterPromise = (filterFunc) => {
+        return new Promise(resolve => {
+            setTimeout(async() => {
+                if (cancel) {
+                    resolve([]);
+                } else {
+                    resolve(filterFunc());
+                }
+            }, 1);
+        });
+    }
+
+
+    var filterList = (searchKey, prop, list) => {
+        var searchKeyLowerCase = searchKey.toLowerCase();
+        var filteredList =  list.filter(item => item[prop].includes(searchKey));
+        return filteredList;
+    }
+        
     </script>
 </body>
 </html>
