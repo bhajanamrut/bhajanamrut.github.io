@@ -219,7 +219,7 @@
                     ${reg[9]?'<span class="warning">&#9888</span>':'<span class="success">&#10003</span>'} 
                     <span style="float: left;">${getData(reg, propmap.NAME)} 
                         <a href='${getData(reg, propmap.EDITURL)}' style="display: ${getData(reg, propmap.INCOMPLETE)?'inline':'none'}"> Update</a>
-                        <a href='./idcard.html?name=${getData(reg, propmap.NAME)}&regno=${getData(reg, propmap.REGID)}&needchair=${getData(reg, propmap.NEEDCHAIR)}&needpothi=${getData(reg, propmap.NEEDPOTHI)}&section=To Be alloted' style="display: ${getData(reg, propmap.INCOMPLETE)?'none':'inline'}"> Id-Card</a>
+                        <a href='./idcard.html?name=${getData(reg, propmap.NAME)}&regno=${getData(reg, propmap.REGID)}&needchair=${getData(reg, propmap.NEEDCHAIR)}&needpothi=${getData(reg, propmap.NEEDPOTHI)}&section=To Be alloted&phno=91${getData(reg, propmap.MOBILENO)}' style="display: ${getData(reg, propmap.INCOMPLETE)?'none':'inline'}"> Id-Card</a>
                         </span>
                     <span style="float: right;">${getData(reg, propmap.MOBILENO)}</span></div>`
                 ).join('')}`;
