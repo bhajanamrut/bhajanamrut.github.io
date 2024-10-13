@@ -63,9 +63,16 @@
     </style>
 </head>
 <body>
-    <div id="embeddedContent">
-		
-	</div>
+	  
+	  
+	  
+	  <!-- html2canvas library -->
+	  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+    <div id="embeddedContent"></div>
+	<br/>
+	<button id="shareBtn">Download and Share</button>
+
 	<script>
         // Function to get URL parameters
         function getParameterByName(name) {
@@ -80,6 +87,7 @@
 		const needpothi = (getParameterByName('needpothi')?.toLowerCase() === 'yes'?'पाहिजे':'स्वताची आहे') || 'स्वताची आहे/पाहिजे'; 
 		const needchair = (getParameterByName('needchair')?.toLowerCase() === 'yes'?'कुर्सी वर':'खाली बसून') || 'कुर्सी वर/खाली बसून'; 
 		const section = (getParameterByName('section')?.toUpperCase()) || 'बैठक कक्ष'; 
+		const phoneNo = (getParameterByName('phno')?.toUpperCase()) || ''; 
 
         // Create the entire HTML structure as a formatted string
         const htmlContent = `
@@ -111,9 +119,40 @@
 
         // Insert the formatted HTML into the content div
         document.getElementById('embeddedContent').innerHTML = htmlContent;
-    </script>
-	
 
+		function saveTableAsImageAndShare() {
+			// Convert table to canvas
+			html2canvas(document.getElementById('embeddedContent')).then(canvas => {
+					// Convert canvas to a data URL for the image
+					let imgData = canvas.toDataURL('image/png');
+
+					// Create an anchor element to trigger the download
+					let a = document.createElement('a');
+					a.href = imgData;
+					a.download = `RegCard-${name}-${phoneNo}.png`;  // Name of the image file to be saved
+
+					// Trigger the download by simulating a click
+					document.body.appendChild(a);
+					a.click();
+					document.body.removeChild(a);
+
+					let whatsappMessage = `नोंदणी कार्ड - ${name}`;
+            		let encodedMessage = encodeURIComponent(whatsappMessage);
+
+					if(phoneNo !== ''){
+						let whatsappLink = `https://wa.me/${phoneNo}?text=${encodedMessage}`;
+						// Open WhatsApp share link
+						window.open(whatsappLink, '_blank');
+					}
+				});
+		}
+
+		// Button event listener
+		document.getElementById('shareBtn').addEventListener('click', function() {
+			saveTableAsImageAndShare();
+		});
+
+    </script>
     
 </body>
 </html>
