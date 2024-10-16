@@ -8,6 +8,7 @@ var p2 = [
      { eng: 'savaliya giridhari lal khabar', hin: 'सांवलिया गिरिधारी लाल खबर लेना मेरी', dir: '2', id: '7' },
      { eng: 'devi painjanacha nad naad', hin: 'पैंजनाचा नाद', dir: '2', id: '8' },
      { eng: 'devi dongaravari', hin: 'डोंगरावरी डोंगर ग', dir: '2', id: '9' },
+     { eng: 'devi adimaya ambabai sarya duniyechi', hin: 'आदिमाया अंबाबाई साऱ्या दुनियेची', dir: '2', id: '12' },
 
 
 ];
