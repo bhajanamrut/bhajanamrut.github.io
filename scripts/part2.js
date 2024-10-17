@@ -8,7 +8,12 @@ var p2 = [
      { eng: 'savaliya giridhari lal khabar', hin: 'सांवलिया गिरिधारी लाल खबर लेना मेरी', dir: '2', id: '7' },
      { eng: 'devi painjanacha nad naad', hin: 'पैंजनाचा नाद', dir: '2', id: '8' },
      { eng: 'devi dongaravari', hin: 'डोंगरावरी डोंगर ग', dir: '2', id: '9' },
+     { eng: 'achyutam keshavam', hin: 'अच्चुतम केशवं कृष्ण दामोदरं', dir: '2', id: '10' },
+     { eng: 'ram nadatuni naad nirmito', hin: 'नादातुनी या नाद निर्मितो ', dir: '2', id: '11' },
      { eng: 'devi adimaya ambabai sarya duniyechi', hin: 'आदिमाया अंबाबाई साऱ्या दुनियेची', dir: '2', id: '12' },
+     { eng: 'nav swaminche yeta mazya', hin: 'नाव स्वामींचे येता माझ्या', dir: '2', id: '13' },
+     { eng: 'ashwin mahinya ali khelat', hin: 'अश्वीन महीन्यात आली खेळत खेळत', dir: '2', id: '14' },
+     { eng: 'bhiu nako mi tuzya pathishi aahe', hin: 'भिऊ नको मी तुझ्या पाठीशी आहे', dir: '2', id: '15' },
 
 
 ];
