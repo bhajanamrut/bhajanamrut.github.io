@@ -1,19 +1,19 @@
 var p2 = [
-     { eng: 'navaratri devi arati ashwin masi shukla', hin: 'नवरात्र देवी आरती', dir: '2', id: '1' },
+     { eng: 'devi navaratri arati ashwin masi shukla', hin: 'नवरात्र देवी आरती', dir: '2', id: '1' },
      { eng: 'devi aai bhavani tuzya krupene', hin: 'आई भवानी तुझ्या कृपेने', dir: '2', id: '2' },
      { eng: 'devi chalo bulava aya hai', hin: 'चलो बुलावा आया है', dir: '2', id: '3' },
      { eng: 'gajanan shegaon nivasi maharaj mere', hin: 'शेगांव निवासी, महाराज मेरे', dir: '2', id: '4' }, 
      { eng: 'devi kya shan shaan hai tulaja', hin: 'क्या शान है तुलजा भवानी की', dir: '2', id: '5' },
-     { eng: 'veda houni nache anand', hin: 'वेडा होऊनी नाचे आनंद', dir: '2', id: '6' },
-     { eng: 'savaliya giridhari lal khabar', hin: 'सांवलिया गिरिधारी लाल खबर लेना मेरी', dir: '2', id: '7' },
+     { eng: 'krushna veda houni nache anand', hin: 'वेडा होऊनी नाचे आनंद', dir: '2', id: '6' },
+     { eng: 'krushna savaliya giridhari lal khabar', hin: 'सांवलिया गिरिधारी लाल खबर लेना मेरी', dir: '2', id: '7' },
      { eng: 'devi painjanacha nad naad', hin: 'पैंजनाचा नाद', dir: '2', id: '8' },
      { eng: 'devi dongaravari', hin: 'डोंगरावरी डोंगर ग', dir: '2', id: '9' },
-     { eng: 'achyutam keshavam', hin: 'अच्चुतम केशवं कृष्ण दामोदरं', dir: '2', id: '10' },
+     { eng: 'krushna achyutam keshavam', hin: 'अच्चुतम केशवं कृष्ण दामोदरं', dir: '2', id: '10' },
      { eng: 'ram nadatuni naad nirmito', hin: 'नादातुनी या नाद निर्मितो ', dir: '2', id: '11' },
      { eng: 'devi adimaya ambabai sarya duniyechi', hin: 'आदिमाया अंबाबाई साऱ्या दुनियेची', dir: '2', id: '12' },
      { eng: 'nav swaminche yeta mazya', hin: 'नाव स्वामींचे येता माझ्या', dir: '2', id: '13' },
-     { eng: 'ashwin mahinya ali khelat', hin: 'अश्वीन महीन्यात आली खेळत खेळत', dir: '2', id: '14' },
-     { eng: 'bhiu nako mi tuzya pathishi aahe', hin: 'भिऊ नको मी तुझ्या पाठीशी आहे', dir: '2', id: '15' },
+     { eng: 'devi ashwin mahinya ali khelat', hin: 'अश्वीन महीन्यात आली खेळत खेळत', dir: '2', id: '14' },
+     { eng: 'swami bhiu nako mi tuzya pathishi aahe', hin: 'भिऊ नको मी तुझ्या पाठीशी आहे', dir: '2', id: '15' },
 
 
 ];
