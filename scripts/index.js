@@ -5,7 +5,7 @@
 
 (function () {
     "use strict";
-    var searchBox, listElement, searchBtn, progressBar;
+    var searchBox, listElement, searchBtn, progressBar, pending=0, errors=0;
     var allBhajans = p1.concat(p2);
     var filteredBhajans = allBhajans;
     var timeout;
@@ -156,18 +156,51 @@
     }
 
     var updateList = () => {
-     	const markup = `${filteredBhajans.map(bhajan => `<div class="item"><a href="./bhajan.html?b=${bhajan.dir}-${bhajan.id}"><span style="float: left;">${bhajan.hin}</span><span style="float: right;">${bhajan.dir} - ${bhajan.id.split('.')[0] }</span></a></div>`).join('')}`;
+     	const markup = `${filteredBhajans.map(bhajan => `<div class="item" file-id="${bhajan.dir}-${bhajan.id}"><a href="./bhajan.html?b=${bhajan.dir}-${bhajan.id}"><span style="float: left;">${bhajan.hin}</span><span style="float: right;">${bhajan.dir} - ${bhajan.id.split('.')[0] }</span></a></div>`).join('')}`;
         listElement.innerHTML = markup;
+    }
+
+    var fetchFileContent = (fileName, listItem) => {
+        fetch(`${fileName}`)
+          .then(response => response.text())
+          .then(data => {
+            const specificText = "soon";  // Text to check for
+            if (data.length < 100) {
+              const icon = document.createElement('span');
+              icon.className = "icn";
+              icon.innerHTML = '&#x1F6A9;';  // Unicode for a flag icon or use any icon
+              listItem.appendChild(icon);
+              pending++;
+            }
+          })
+          .catch(error => {
+            //console.error('Error fetching the file:', error);
+            const icon = document.createElement('span');
+              icon.className = "icn";
+              icon.innerHTML =  '&#9888;';  // Unicode for a flag icon or use any icon
+              listItem.appendChild(icon);
+              errors++;
+          });
+    }
+
+    var validate =  () => {
+        pending = 0;
+        errors = 0;
+        const items = document.querySelectorAll('#BhajanList > div');
+
+        items.forEach(item => {
+            const fileId = item.getAttribute('file-id');
+            const fileName = "./bhajans/" + fileId.split("-")[0] + "/" + fileId.split("-")[1] + ".txt"
+            fetchFileContent(fileName, item);
+        });
+        setTimeout(()=>{alert(`pending: ${pending}, errors: ${errors}`);}, 5000);
     }
 
     var onDeviceReady = () => {
         searchBox = document.getElementById('searchBox');
-        //searchBtn = document.getElementById('searchBtn');
         progressBar = document.getElementById('progressBar');
         listElement = document.getElementById('BhajanList');
         searchBox.addEventListener('input', delayedSearch, false);
-        //document.addEventListener("searchbutton", onSearchBtnClicked, false);
-        //searchBtn.addEventListener('click', onSearchBtnClicked, false);
         updateList();
     };
 
