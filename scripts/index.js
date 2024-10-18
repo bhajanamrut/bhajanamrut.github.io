@@ -33,10 +33,15 @@
     }
 
     var onSearch = async(evt) => {
-        cancel = false;
-        busy = true;
         evt = evtdata;
         var searchKey = evt.target.value;
+        if(searchKey === "vv"){
+            validate();
+            return;
+        }
+        cancel = false;
+        busy = true;
+        
         if (!searchKey || searchKey === '') {
             filteredBhajans = allBhajans;
             updateList();
