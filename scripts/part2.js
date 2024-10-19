@@ -14,7 +14,7 @@ var p2 = [
      { eng: 'nav swaminche yeta mazya', hin: 'नाव स्वामींचे येता माझ्या', dir: '2', id: '13' },
      { eng: 'devi ashwin mahinya ali khelat', hin: 'अश्वीन महीन्यात आली खेळत खेळत', dir: '2', id: '14' },
      { eng: 'swami bhiu nako mi tuzya pathishi aahe', hin: 'भिऊ नको मी तुझ्या पाठीशी आहे', dir: '2', id: '15' },
-    // { eng: '', hin: '', dir: '2', id: '16' },
+     { eng: 'datta namacha mahima', hin: 'दत्त दत्त नामाचा महिमा', dir: '2', id: '17' },
 
 
 ];
