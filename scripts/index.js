@@ -18,7 +18,7 @@
         clearTimeout(timeout);
         timeout = 0;
         evtdata = evt;
-        if(evt.data.value.length < 2) return;
+        if(evt.target.value.length < 2) return;
         //timeouts.push(setTimeout(onSearch, 1));
         var startSearch = () => {
             if(!busy){
