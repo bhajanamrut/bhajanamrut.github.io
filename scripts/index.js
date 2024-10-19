@@ -18,7 +18,6 @@
         clearTimeout(timeout);
         timeout = 0;
         evtdata = evt;
-        if(evt.target.value.length < 2) return;
         //timeouts.push(setTimeout(onSearch, 1));
         var startSearch = () => {
             if(!busy){
@@ -36,16 +35,15 @@
     var onSearch = async(evt) => {
         evt = evtdata;
         var searchKey = evt.target.value;
-        if(searchKey === "vv"){
-            validate();
-            return;
-        }
         cancel = false;
         busy = true;
         
-        if (!searchKey || searchKey === '') {
+        if (!searchKey || searchKey === '' || searchKey.length < 2) {
             filteredBhajans = allBhajans;
             updateList();
+        }
+        else if(searchKey === "vv"){
+            validate();
         }
         else {
             filteredBhajans = [];
