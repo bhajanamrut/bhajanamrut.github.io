@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get Location and Submit Form</title>
+</head>
+<body>
+    <h2>Capture Location and Submit Google Form</h2>
+    <button onclick="getLocation()">Start Survey</button>
+    
+    <form id="gpsForm" action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse" method="POST" target="_blank">
+        <input type="hidden" name="entry.GPS_QUESTION_ENTRY_ID" id="locationField">
+        <input type="submit" value="Submit Form">
+    </form>
+
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        function showPosition(position) {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+            document.getElementById('locationField').value = `${lat}, ${lon}`;
+            document.getElementById('gpsForm').submit();
+        }
+    </script>
+</body>
+</html>
