@@ -17,7 +17,7 @@ var p2 = [
      { eng: 'kiti sukh hai', hin: 'किति सुख हे किती', dir: '2', id: '16' }, 
      { eng: 'datta namacha mahima', hin: 'दत्त दत्त नामाचा महिमा', dir: '2', id: '17' },
      { eng: 'har sans saas me sumiran', hin: 'हर सांस मे हो सुमिरन तेरा', dir: '2', id: '18' },
-     //{ eng: 'he dukha dukkha bhanjan', hin: 'हे दुःख भन्जन, मारुती नंदन', dir: '2', id: '19' },
+     { eng: 'he dukha dukkha bhanjan', hin: 'हे दुःख भन्जन, मारुती नंदन', dir: '2', id: '19' },
      //{ eng: '', hin: '', dir: '2', id: '20' },
      //{ eng: '', hin: '', dir: '2', id: '21' },
      //{ eng: '', hin: '', dir: '2', id: '22' },
