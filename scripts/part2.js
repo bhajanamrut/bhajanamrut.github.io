@@ -18,9 +18,9 @@ var p2 = [
      { eng: 'datta namacha mahima', hin: 'दत्त दत्त नामाचा महिमा', dir: '2', id: '17' },
      { eng: 'har sans saas me sumiran', hin: 'हर सांस मे हो सुमिरन तेरा', dir: '2', id: '18' },
      { eng: 'he dukha dukkha bhanjan', hin: 'हे दुःख भन्जन, मारुती नंदन', dir: '2', id: '19' },
-     //{ eng: '', hin: '', dir: '2', id: '20' },
-     //{ eng: '', hin: '', dir: '2', id: '21' },
-     //{ eng: '', hin: '', dir: '2', id: '22' },
+     { eng: 'jalato ha nandadip', hin: 'जळतो हा नंदादीप', dir: '2', id: '20' },
+     { eng: 'tari mala jagadambe', hin: 'तारी मला जगदंबे', dir: '2', id: '21' },
+     { eng: 'pandurang ale aale', hin: 'पांडुरंग आले आले', dir: '2', id: '22' },
 ];
 
 if (typeof module === 'object' && module.exports) {
