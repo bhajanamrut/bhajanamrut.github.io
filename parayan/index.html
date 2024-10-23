@@ -198,7 +198,7 @@
             dropdownContent.appendChild(allLabel);
 
             // Create options from JSON object
-            Object.keys(summary.Area).forEach((key, index) => {
+            Object.keys(summary.Area).sort().forEach((key, index) => {
                 const label = document.createElement('label');
                 const checkbox = document.createElement('input');
                 checkbox.type = 'checkbox';
