@@ -67,6 +67,41 @@
         margin: 0px 2px;
         border: 1px solid gray;
     }
+
+    .dropdown {
+            position: relative;
+            margin-top: 8px;
+            float: left;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            margin: 25px;
+        }
+
+        .dropdown-content label {
+            display: flex;
+            padding: 8px;
+            cursor: pointer;
+            
+        }
+
+        .dropdown-content label:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown.show .dropdown-content {
+            display: block;
+        }
+
+        #selectedItems {
+            margin-top: 10px;
+        }
 </style>
 
 <body>
@@ -98,7 +133,12 @@
                 
             </div>
         </div>
-        <div><a href="#" style="padding: 5px;float: left;margin: 0px 10px;" onclick="copy(event)" id="copymsg"></a></div>
+        <div class="dropdown" id="checkboxDropdown">
+            <button onclick="toggleDropdown()" style="float: left; margin: 4px 12px;">Filter by Area</button>
+            <div class="dropdown-content" id="dropdownContent"></div>
+            <div><a href="#" style="padding: 5px;float: left;margin: 0px 10px;" onclick="copy(event)" id="copymsg"></a></div>
+        </div>
+        
 
         <div class="sb-container">
             <input id="searchBox" type="search" placeholder="Search by phone number ..." style="width: 100%; height: 32px;font-size: 20px; margin: 5px;">
@@ -120,6 +160,7 @@
         var evtdata;
         var cancel = false;
         var busy = false;
+        var summary;
 
         const propmap = {
                 'NAME': 0,
@@ -136,10 +177,93 @@
                 'ENGNAME': 11
             };
 
+            //const options = ["All", "Option 1", "Option 2", "Option 3", "Option 4"];
+
+            function createAreaFilterDropdown() {
+            const dropdownContent = document.getElementById('dropdownContent');
+
+            // Create "All" option first
+            const allLabel = document.createElement('label');
+            const allCheckbox = document.createElement('input');
+            allCheckbox.type = 'checkbox';
+            allCheckbox.id = 'option-all';
+            allCheckbox.checked = true;
+
+            allCheckbox.addEventListener('change', toggleAll);
+
+            allLabel.appendChild(allCheckbox);
+            allLabel.appendChild(document.createTextNode('All'));
+            dropdownContent.appendChild(allLabel);
+
+            // Create options from JSON object
+            Object.keys(summary.Area).forEach((key, index) => {
+                const label = document.createElement('label');
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.value = key;
+                checkbox.id = `option-${index + 1}`;
+                checkbox.checked = true;
+
+                // Add event listener for changes
+                checkbox.addEventListener('change', updateSelectedItems);
+
+                // Display key and value in format: key (value)
+                label.appendChild(checkbox);
+                label.appendChild(document.createTextNode(`${key} (${summary.Area[key]})`));
+
+                dropdownContent.appendChild(label);
+            });
+            }
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById('checkboxDropdown');
+            dropdown.classList.toggle('show');
+        }
+
+        function toggleAll() {
+            const allCheckbox = document.getElementById('option-all'); // "All" checkbox
+            const checkboxes = document.querySelectorAll('#dropdownContent input[type="checkbox"]:not(#option-all)');
+
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = allCheckbox.checked;
+            });
+
+            updateSelectedItems();
+        }
+
+        function updateSelectedItems() {
+            const allCheckbox = document.getElementById('option-all'); // "All" checkbox
+            const checkboxes = document.querySelectorAll('#dropdownContent input[type="checkbox"]:not(#option-all)');
+            const selected = [];
+
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    selected.push(`${checkbox.value} (${summary.Area[checkbox.value]})`);
+                }
+            });
+
+            // Update the state of the "All" checkbox
+            allCheckbox.checked = selected.length === checkboxes.length;
+
+            //const selectedItemsDiv = document.getElementById('selectedItems');
+            //selectedItemsDiv.innerHTML = selected.length > 0 ? `Selected: ${selected.join(', ')}` : 'Selected: None';
+            delayedSearch();
+            
+        }
+
+        // Close dropdown when clicking outside of it
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('checkboxDropdown');
+            if (!dropdown.contains(event.target)) {
+                dropdown.classList.remove('show');
+            }
+        });
+
         function onLoad() {
             searchBox = document.getElementById('searchBox');
             //listElement = document.getElementById('DataList');
             searchBox.addEventListener('input', delayedSearch, false);
+            
             fetchAndUpdate();
         }
 
@@ -174,7 +298,7 @@
         }
         function showSummary(event) {
             event.preventDefault(); // Prevent default navigation
-            const summary = generateSummary();
+            generateSummary();
             const summaryStr = `    
     पुरुष: ${summary.Gender.M}, महिला: ${summary.Gender.F} 
 
@@ -197,7 +321,7 @@
         }
 
         function generateSummary() {
-            const summary = dataset.reduce((acc, obj) => {
+            const sm = dataset.reduce((acc, obj) => {
                 // Count occurrences of property1
                 const needChair = getData(obj, propmap.NEEDCHAIR);
                 acc.NeedChair[needChair] = (acc.NeedChair[needChair] || 0) + 1;
@@ -212,10 +336,14 @@
                 const region = getData(obj, propmap.REGION);
                 acc.Region[region] = (acc.Region[region] || 0) + 1;
 
-                return acc;
-                }, { NeedChair: {}, NeedPothi: {}, Gender: {}, Region: {} }); 
+                const area = getData(obj, propmap.ADDRESS);
+                acc.Area[area] = (acc.Area[area] || 0) + 1;
 
-                return summary;
+                return acc;
+                }, { NeedChair: {}, NeedPothi: {}, Gender: {}, Region: {}, Area: {} }); 
+
+                summary = sm;
+                
             }
 
         function fetchAndUpdate(){
@@ -239,6 +367,9 @@
                     dataset = massageData(data.values);
                     filteredset = dataset;
                     document.getElementById('regCount').innerHTML = data.values.length;
+
+                    generateSummary();
+                    createAreaFilterDropdown();
                     updateList();
                 })
                 .catch(error => {
@@ -310,7 +441,7 @@
         cancel = false;
         busy = true;
         evt = evtdata;
-        var searchKey = evt.target?.value;
+        var searchKey = evt?.target?.value;
         /*if (!searchKey || searchKey === '') {
             filteredset = dataset;
             updateList();
@@ -356,12 +487,16 @@
         const chairOptions = Array.from(document.querySelectorAll('input[name="chair"]:checked')).map(cb => cb.value);
         const pothiOptions = Array.from(document.querySelectorAll('input[name="pothi"]:checked')).map(cb => cb.value);
         const regionOptions = Array.from(document.querySelectorAll('input[name="region"]:checked')).map(cb => cb.value);
+        const areaOptions = Array.from(document.querySelectorAll('#dropdownContent input[type="checkbox"]:checked:not(#option-all)')).map(cb => cb.value);
+        
+
         var filteredList = list.filter(item => {
                     var include = true;
                     include = include && (searchKey && searchKey.length>1)? item[prop].includes(searchKey):true;
                     include = include && chairOptions.includes(item[propmap.NEEDCHAIR]) ;
                     include = include && pothiOptions.includes(item[propmap.NEEDPOTHI]) ;
                     include = include && regionOptions.includes(item[propmap.REGION]) ;
+                    include = include && areaOptions.includes(item[propmap.ADDRESS]) ;
                     //&& selectedCategories.includes(item.category)
                     return include;
                 }
