@@ -202,7 +202,7 @@
                 const label = document.createElement('label');
                 const checkbox = document.createElement('input');
                 checkbox.type = 'checkbox';
-                checkbox.value = key;
+                checkbox.value = key.trim();
                 checkbox.id = `option-${index + 1}`;
                 checkbox.checked = true;
 
@@ -498,7 +498,7 @@
                     include = include && chairOptions.includes(item[propmap.NEEDCHAIR]) ;
                     include = include && pothiOptions.includes(item[propmap.NEEDPOTHI]) ;
                     include = include && regionOptions.includes(item[propmap.REGION]) ;
-                    include = include && areaOptions.includes(item[propmap.ADDRESS]) ;
+                    include = include && areaOptions.includes(item[propmap.ADDRESS].trim()) ;
                     //&& selectedCategories.includes(item.category)
                     return include;
                 }
