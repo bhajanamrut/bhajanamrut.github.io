@@ -339,7 +339,7 @@
                 acc.Region[region] = (acc.Region[region] || 0) + 1;
 
                 const area = getData(obj, propmap.ADDRESS);
-                acc.Area[area] = (acc.Area[area] || 0) + 1;
+                acc.Area[area.trim()] = (acc.Area[area.trim()] || 0) + 1;
 
                 return acc;
                 }, { NeedChair: {}, NeedPothi: {}, Gender: {}, Region: {}, Area: {} }); 
