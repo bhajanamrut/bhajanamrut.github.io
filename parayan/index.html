@@ -164,6 +164,25 @@
         var busy = false;
         var summary;
 
+        const sittingSections = [ 
+            { color: '01557a', name: 'भक्त - बंकटलाल', capacity: 100, currentAllocation: 0, type: 'nochair' }, //blue-1
+            { color: '23a336', name: 'भक्त - पितांबर', capacity: 100, currentAllocation: 0, type: 'nochair' }, //light green-2
+            { color: 'dc84ae', name: 'भक्त - बाळाभाऊ', capacity: 100, currentAllocation: 0, type: 'nochair' }, //light pink-3
+            { color: '7b060c', name: 'भक्त - भास्कर पाटील', capacity: 100, currentAllocation: 0, type: 'chair' }, //maroon-4
+            { color: 'd97d02', name: 'भक्त - नारायण', capacity: 100, currentAllocation: 0, type: 'chair' }, //dark yellow-5
+            { color: '6a3c58', name: 'भक्त - पुंडलिक', capacity: 100, currentAllocation: 0, type: 'chair' }, //purple-6
+            { color: '00341e', name: 'भक्त - हरी पाटील', capacity: 100, currentAllocation: 0, type: 'chair' }, //dark green-7
+            { color: 'fa51ac', name: 'भक्त - बापुना काळे', capacity: 100, currentAllocation: 0, type: 'chair' }, //Dark pink-8
+            { color: '37080e', name: 'भक्त - झ्याम सिंग', capacity: 100, currentAllocation: 0, type: 'chair' }, // Dark maroon-9
+            { color: '37080e', name: 'भक्त - त्रिंबक कंवर', capacity: 100, currentAllocation: 0, type: 'chair' }, //grey-10
+            { color: 'eae3c6', name: 'भक्त - रामचंद्र पाटील', capacity: 100, currentAllocation: 0, type: 'chair' }, //Red-11
+            { color: 'be1b6a', name: 'भक्त - चंद्रभागा', capacity: 100, currentAllocation: 0, type: 'chair' }, //golden-12
+            { color: '632fad', name: 'भक्त - बायजाबाई', capacity: 100, currentAllocation: 0, type: 'chair' }, //violet-13
+            { color: '632fad', name: 'भक्त - बाळकृष्ण बुवा', capacity: 100, currentAllocation: 0, type: 'chair' }, //yellow-14
+            { color: 'ffffff', name: 'भक्त - कोलटकर', capacity: 100, currentAllocation: 0, type: 'chair' }, //copper-15
+            { color: 'e7ae9d', name: 'भक्त - पटवर्धन', capacity: 100, currentAllocation: 0, type: 'chair' }, //copper-16
+            { color: 'f6a905', name: 'संत गजानन महाराज', capacity: '21000', currentAllocation: 0, type: 'chair' }, //copper-17
+        ];
         const propmap = {
                 'NAME': 0,
                 'ADDRESS': 1,
@@ -176,7 +195,8 @@
                 'EDITURL': 8,
                 'INCOMPLETE': 9,
                 'REGID': 10,
-                'ENGNAME': 11
+                'ENGNAME': 11,
+                'SECTION': 12
             };
 
             //const options = ["All", "Option 1", "Option 2", "Option 3", "Option 4"];
@@ -381,7 +401,9 @@
 
         function massageData(data){
             for(var i=0; i<data.length; i++) {
-                setData(i, propmap.REGID, String(i+1).padStart(4, '0'))
+                const regid = i+1;
+                setData(i, propmap.REGID, String(regid).padStart(4, '0'));
+                setData(i, propmap.SECTION, assignSittingSection(regid, getData(i, propmap.NEEDCHAIR)))
                 if(getData(i, propmap.REGION) == '' //region
                     || getData(i, propmap.GENDER) == '' //gender
                     || getData(i, propmap.NEEDCHAIR) == '' //need chair 
@@ -406,7 +428,7 @@
                     <span style="float: left;">
                         <a href='${getData(reg, propmap.EDITURL)}' target="_blank">${getData(reg, propmap.NAME)}</a>
                         &nbsp;
-                        <a href='./idcard.html?name=${getData(reg, propmap.NAME)}&regno=${getData(reg, propmap.REGID)}&needchair=${getData(reg, propmap.NEEDCHAIR)}&needpothi=${getData(reg, propmap.NEEDPOTHI)}&section=To Be alloted&phno=91${getData(reg, propmap.MOBILENO)}' style="display: ${getData(reg, propmap.INCOMPLETE)?'none':'inline'}; text-decoration: none;">&#128179;</a>
+                        <a href='./idcard2.html?name=${getData(reg, propmap.NAME)}&regno=${getData(reg, propmap.REGID)}&needchair=${getData(reg, propmap.NEEDCHAIR)}&needpothi=${getData(reg, propmap.NEEDPOTHI)}&sectionName=${getSectionName(getData(reg, propmap.SECTION))}&sectionClr=${getSectionColor(getData(reg, propmap.SECTION))}&phno=91${getData(reg, propmap.MOBILENO)}' style="display: ${getData(reg, propmap.INCOMPLETE)?'none':'inline'}; text-decoration: none;">&#128179;</a>
                         
                         </span>
                         <span class="warning" style="display: ${getData(reg, propmap.INCOMPLETE)?'inline':'none'};">&#9888</span>
@@ -414,6 +436,37 @@
                 ).join('')}`;
                 listElement.innerHTML = markup;
             }
+        }
+
+        function getSectionName(index) {
+            return sittingSections[index].name;
+        }
+
+        function getSectionColor(index) {
+            return sittingSections[index].color;
+        }
+
+        function assignSittingSection(regid, nc){
+            var needChair = nc && nc.trim().toLowerCase() === "yes";
+            var secionIndex = 16;
+            if(!needChair) {
+                for(var i=0; i<3; i++){
+                    if(sittingSections[i].currentAllocation < sittingSections[i].capacity){
+                        secionIndex = i;
+                        break; 
+                    }
+                }
+            }
+            else{
+                for(var i=3; i<17; i++){
+                    if(sittingSections[i].currentAllocation < sittingSections[i].capacity){
+                        secionIndex = i;
+                        break;
+                    }
+                }
+            }
+            sittingSections[secionIndex].currentAllocation = sittingSections[secionIndex].currentAllocation + 1;    
+            return secionIndex;
         }
 
         /*
