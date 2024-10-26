@@ -39,7 +39,7 @@
 				
 			}
 			.header {
-				padding: 15px 10px;
+				padding: 8px 10px;
 				margin: -1px;
 				font-size: 24px;
 				background-color: orange;
@@ -56,7 +56,7 @@
             .rval {
                 font-size: 18px;
                 color: brown;
-                padding-bottom: 20px;
+                padding-bottom: 16px;
                 padding-left: 30px;
 				text-decoration: underline;
 				text-decoration-color: #CECECE;
@@ -89,7 +89,7 @@
 				display: block;
 			}
             .footer {
-                font-size: 12px;
+                font-size: 11px;
 				padding: 10px;
             }
     </style>
@@ -102,9 +102,9 @@
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
     <div id="embeddedContent"></div>
-	<br/>
+	<div style="height: 5px;"></div>
 	<button id="shareBtn">Download and Share</button>
-
+	
 	<script>
         // Function to get URL parameters
         function getParameterByName(name) {
@@ -139,23 +139,23 @@
 				<td class="rhdr"><div style="height: 10px; width: 10px"></td>
 			</tr>
 			<tr>
-				<td class="rhdr">Name/नावं :</td>
+				<td class="rhdr">Name / नावं :</td>
 			</tr>
             <tr><td class="rval">${name}</td></tr>
 			<tr>
-				<td class="rhdr">Reg.No./नोंदणी क्र. :</td>
+				<td class="rhdr">Reg.No. / नोंदणी क्र. :</td>
 			</tr>
             <tr><td class="rval">${regno}</td></tr>
 			<tr>
-				<td class="rhdr">Book/पोथी : </td>
+				<td class="rhdr">Book / पोथी : </td>
 			</tr>
             <tr><td class="rval">${needpothi}</td></tr>
 			<tr>
-				<td class="rhdr">Sitting/बैठकी :</td>
+				<td class="rhdr">Sitting / बैठकी :</td>
 			</tr>
             <tr><td class="rval">${needchair}</td></tr>
 			<tr>
-				<td class="rhdr">Section/बैठक कक्ष :</td><td></td>
+				<td class="rhdr">Section / बैठक कक्ष :</td><td></td>
 			</tr>
             <tr>
 				<td class="rval"><span style="float:left; width: 20px; height: 20px; background-color: #${sectionColor}; border-radius: 10px; border: 1px solid black;" ></span> &nbsp ${sectionName} </td>
