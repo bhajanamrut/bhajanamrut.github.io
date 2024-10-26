@@ -179,7 +179,7 @@
 					// Create an anchor element to trigger the download
 					let a = document.createElement('a');
 					a.href = imgData;
-					a.download = `RegCard-${name}-${phoneNo}.png`;  // Name of the image file to be saved
+					a.download = `${regno}-${name}-${phoneNo}.png`;  // Name of the image file to be saved
 
 					// Trigger the download by simulating a click
 					document.body.appendChild(a);
