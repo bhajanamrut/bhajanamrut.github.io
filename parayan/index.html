@@ -432,7 +432,7 @@
                         
                         </span>
                         <span class="warning" style="display: ${getData(reg, propmap.INCOMPLETE)?'inline':'none'};">&#9888</span>
-                    <span style="float: right;">${getData(reg, propmap.MOBILENO)}</span></div>`
+                    <span style="float: right;"><a href='https://wa.me/91${getData(reg, propmap.MOBILENO)}'>${getData(reg, propmap.MOBILENO)}</a></span></div>`
                 ).join('')}`;
                 listElement.innerHTML = markup;
             }
