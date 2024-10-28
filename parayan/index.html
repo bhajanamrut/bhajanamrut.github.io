@@ -192,11 +192,12 @@
                 'NEEDCHAIR': 5,
                 'MOBILENO': 6,
                 'NEEDPOTHI': 7,
-                'EDITURL': 8,
-                'INCOMPLETE': 9,
-                'REGID': 10,
-                'ENGNAME': 11,
-                'SECTION': 12
+                'STATYS': 8,
+                'EDITURL': 9,
+                'INCOMPLETE': 10,
+                'REGID': 11,
+                'ENGNAME': 12,
+                'SECTION': 13
             };
 
             //const options = ["All", "Option 1", "Option 2", "Option 3", "Option 4"];
@@ -370,7 +371,7 @@
 
         function fetchAndUpdate(){
             const sheetId = '1sVZ1d_yMRcu3STWN_W1CV2CCqj5B24McPH76jAb0kjQ'; // Replace with your actual sheet ID
-            const sheetName = 's1!C2:K2500'; // Replace with the name of your sheet
+            const sheetName = 's1!C2:L2500'; // Replace with the name of your sheet
             const apiKey = 'AIzaSyBTkT9f1ceMamAPhKhpMkUItgVIsH4RJuU'; // Optional, can be omitted if not using an API key
 
             const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${sheetName}?key=${apiKey}`;
