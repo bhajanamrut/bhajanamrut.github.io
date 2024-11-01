@@ -122,23 +122,32 @@
         var currIdx=0;
 
         const sittingSections = [ 
+        //sitting
             { color: '01557a', name: 'भक्त - बंकटलाल', capacity: 100, currentAllocation: 0, type: 'nochair' }, //blue-1
             { color: '23a336', name: 'भक्त - पितांबर', capacity: 100, currentAllocation: 0, type: 'nochair' }, //light green-2
             { color: 'dc84ae', name: 'भक्त - बाळाभाऊ', capacity: 100, currentAllocation: 0, type: 'nochair' }, //light pink-3
-            { color: '7b060c', name: 'भक्त - भास्कर पाटील', capacity: 100, currentAllocation: 0, type: 'chair' }, //maroon-4
-            { color: 'd97d02', name: 'भक्त - नारायण', capacity: 100, currentAllocation: 0, type: 'chair' }, //dark yellow-5
-            { color: '6a3c58', name: 'भक्त - पुंडलिक', capacity: 100, currentAllocation: 0, type: 'chair' }, //purple-6
-            { color: '00341e', name: 'भक्त - हरी पाटील', capacity: 100, currentAllocation: 0, type: 'chair' }, //dark green-7
-            { color: 'fa51ac', name: 'भक्त - बापुना काळे', capacity: 100, currentAllocation: 0, type: 'chair' }, //Dark pink-8
-            { color: '37080e', name: 'भक्त - झ्याम सिंग', capacity: 100, currentAllocation: 0, type: 'chair' }, // Dark maroon-9
-            { color: '37080e', name: 'भक्त - त्रिंबक कंवर', capacity: 100, currentAllocation: 0, type: 'chair' }, //grey-10
-            { color: 'eae3c6', name: 'भक्त - रामचंद्र पाटील', capacity: 100, currentAllocation: 0, type: 'chair' }, //Red-11
-            { color: 'be1b6a', name: 'भक्त - चंद्रभागा', capacity: 100, currentAllocation: 0, type: 'chair' }, //golden-12
-            { color: '632fad', name: 'भक्त - बायजाबाई', capacity: 100, currentAllocation: 0, type: 'chair' }, //violet-13
-            { color: '632fad', name: 'भक्त - बाळकृष्ण बुवा', capacity: 100, currentAllocation: 0, type: 'chair' }, //yellow-14
-            { color: 'ffffff', name: 'भक्त - कोलटकर', capacity: 100, currentAllocation: 0, type: 'chair' }, //copper-15
-            { color: 'e7ae9d', name: 'भक्त - पटवर्धन', capacity: 100, currentAllocation: 0, type: 'chair' }, //copper-16
-            { color: 'f6a905', name: 'संत गजानन महाराज', capacity: '21000', currentAllocation: 0, type: 'chair' }, //copper-17
+            { color: 'e7ae9d', name: 'भक्त - पटवर्धन', capacity: 100, currentAllocation: 0, type: 'chair' }, //copper-4
+            { color: '2596be', name: 'भक्त - भागूबाई', capacity: 100, currentAllocation: 0, type: 'nochair' }, //blue-5
+            { color: '873e23', name: 'भक्त - नंदू बाई', capacity: 100, currentAllocation: 0, type: 'nochair' }, //brown-6
+            { color: 'abdbe3', name: 'भक्त - भुलाबाई', capacity: 100, currentAllocation: 0, type: 'nochair' }, //light blue-7
+            { color: 'e28743', name: 'भक्त - अनुसयाबाई', capacity: 100, currentAllocation: 0, type: 'nochair' }, //orange-8
+            { color: 'cecece', name: 'भक्त - गुजाबाई', capacity: 100, currentAllocation: 0, type: 'nochair' }, //maroon-9
+            { color: '57e792', name: 'भक्त - बनाबाई', capacity: 100, currentAllocation: 0, type: 'nochair' }, //firozee-10
+            
+            //chair
+            { color: '7b060c', name: 'भक्त - भास्कर पाटील', capacity: 100, currentAllocation: 0, type: 'nochair' }, //maroon-11
+            { color: 'd97d02', name: 'भक्त - नारायण', capacity: 100, currentAllocation: 0, type: 'chair' }, //dark yellow-12
+            { color: '6a3c58', name: 'भक्त - पुंडलिक', capacity: 100, currentAllocation: 0, type: 'chair' }, //purple-13
+            { color: '00341e', name: 'भक्त - हरी पाटील', capacity: 100, currentAllocation: 0, type: 'chair' }, //dark green-14
+            { color: 'fa51ac', name: 'भक्त - बापुना काळे', capacity: 100, currentAllocation: 0, type: 'chair' }, //Dark pink-15
+            { color: '37080e', name: 'भक्त - झ्याम सिंग', capacity: 100, currentAllocation: 0, type: 'chair' }, // Dark maroon-16
+            { color: '37080e', name: 'भक्त - त्रिंबक कंवर', capacity: 100, currentAllocation: 0, type: 'chair' }, //grey-17
+            { color: 'eae3c6', name: 'भक्त - रामचंद्र पाटील', capacity: 100, currentAllocation: 0, type: 'chair' }, //Red-18
+            { color: 'be1b6a', name: 'भक्त - चंद्रभागाबाई', capacity: 100, currentAllocation: 0, type: 'chair' }, //golden-19
+            { color: '632fad', name: 'भक्त - बायजाबाई', capacity: 100, currentAllocation: 0, type: 'chair' }, //violet-20
+            { color: '632fad', name: 'भक्त - बाळकृष्ण बुवा', capacity: 100, currentAllocation: 0, type: 'chair' }, //yellow-21
+            { color: 'ffffff', name: 'भक्त - कोलटकर', capacity: 100, currentAllocation: 0, type: 'chair' }, //copper-22
+            { color: 'f6a905', name: 'संत गजानन महाराज', capacity: '21000', currentAllocation: 0, type: 'chair' }, //copper-23
         ];
         const propmap = {
                 'NAME': 0,
@@ -149,11 +158,12 @@
                 'NEEDCHAIR': 5,
                 'MOBILENO': 6,
                 'NEEDPOTHI': 7,
-                'EDITURL': 8,
-                'INCOMPLETE': 9,
-                'REGID': 10,
-                'ENGNAME': 11,
-                'SECTION': 12
+                'STATUS': 8,
+                'EDITURL': 9,
+                'INCOMPLETE': 10,
+                'REGID': 11,
+                'ENGNAME': 12,
+                'SECTION': 13
             };
 
         function getParameterByName(name) {
@@ -264,27 +274,6 @@
 
         }
 
-        function updateList(){
-            if(filteredset){
-                var dataset = filteredset;
-                const listElement = document.getElementById('RegList');
-                //const markup = `${filteredBhajans.map(regData => `<div class="item"><a href="./bhajan.html?b=${bhajan.dir}-${bhajan.id}"><span style="float: left;">${bhajan.hin}</span><span style="float: right;">${bhajan.dir} - ${bhajan.id.split('.')[0] }</span></a></div>`).join('')}`;
-                //${reg[9]?'<span class="warning">&#9888</span>':'<span class="success">&#10003</span>'} 
-                const markup = `${dataset.map(reg => `<div class="item"> 
-                    
-                    <span style="float: left;">
-                        <a href='${getData(reg, propmap.EDITURL)}' target="_blank">${getData(reg, propmap.NAME)}</a>
-                        &nbsp;
-                        <a href='./idcard2.html?name=${getData(reg, propmap.NAME)}&regno=${getData(reg, propmap.REGID)}&needchair=${getData(reg, propmap.NEEDCHAIR)}&needpothi=${getData(reg, propmap.NEEDPOTHI)}&sectionName=${getSectionName(getData(reg, propmap.SECTION))}&sectionClr=${getSectionColor(getData(reg, propmap.SECTION))}&phno=91${getData(reg, propmap.MOBILENO)}' style="display: ${getData(reg, propmap.INCOMPLETE)?'none':'inline'}; text-decoration: none;">&#128179;</a>
-                        
-                        </span>
-                        <span class="warning" style="display: ${getData(reg, propmap.INCOMPLETE)?'inline':'none'};">&#9888</span>
-                    <span style="float: right;"><a href='https://wa.me/91${getData(reg, propmap.MOBILENO)}'>${getData(reg, propmap.MOBILENO)}</a></span></div>`
-                ).join('')}`;
-                listElement.innerHTML = markup;
-            }
-        }
-
         function getSectionName(index) {
             return sittingSections[index].name;
         }
@@ -295,9 +284,9 @@
 
         function assignSittingSection(regid, nc){
             var needChair = nc && nc.trim().toLowerCase() === "yes";
-            var secionIndex = 16;
+            var secionIndex = 22;
             if(!needChair) {
-                for(var i=0; i<3; i++){
+                for(var i=0; i<10; i++){
                     if(sittingSections[i].currentAllocation < sittingSections[i].capacity){
                         secionIndex = i;
                         break; 
@@ -305,7 +294,7 @@
                 }
             }
             else{
-                for(var i=3; i<17; i++){
+                for(var i=10; i<22; i++){
                     if(sittingSections[i].currentAllocation < sittingSections[i].capacity){
                         secionIndex = i;
                         break;
