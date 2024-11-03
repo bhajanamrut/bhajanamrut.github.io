@@ -334,15 +334,14 @@
             return (nc && nc.toLowerCase() === 'yes')?'खुर्चीवर बसुन':'खाली बसून';     
         }
 
-
-        function getRecordString(item){
-            return `${getData(item, propmap.NAME)},${getData(item, propmap.REGID)},${getPothiString(getData(item, propmap.NEEDPOTHI))},${getData(item, propmap.MOBILENO)},${getBaithakString(getData(item, propmap.NEEDCHAIR))},${getSectionName(getData(item, propmap.SECTION))},${getSectionColor(getData(item, propmap.SECTION))},${getData(item, propmap.STATUS)}\n`;
+	function getRecordString(item){
+            return `${getData(item, propmap.NAME)},${getData(item, propmap.REGID)},${getPothiString(getData(item, propmap.NEEDPOTHI))},${getData(item, propmap.MOBILENO)},${getBaithakString(getData(item, propmap.NEEDCHAIR))},${getSectionName(getData(item, propmap.SECTION))},${getData(item, propmap.STATUS)}\n`;
         }
 
         function copy(event) {
             event.preventDefault(); // Prevent default navigation
             //alert(filteredset.length);
-            var records = "";
+            var records = `Name,RegNo,Pothi,MobNo,SittingType,Section,Status\n`;
             filteredset.forEach(element => {
 
                 records += getRecordString(element);
@@ -356,6 +355,7 @@
                 alert("Failed to copy text: ", err);
             });
         }
+        	    
         function showSummary(event) {
             event.preventDefault(); // Prevent default navigation
             generateSummary();
