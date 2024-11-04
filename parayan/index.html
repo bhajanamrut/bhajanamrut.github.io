@@ -335,7 +335,27 @@
         }
 
 	function getRecordString(item){
-            return `${getData(item, propmap.NAME)},${getData(item, propmap.REGID)},${getPothiString(getData(item, propmap.NEEDPOTHI))},${getData(item, propmap.MOBILENO)},${getBaithakString(getData(item, propmap.NEEDCHAIR))},${getSectionName(getData(item, propmap.SECTION))},${getData(item, propmap.STATUS)}\n`;
+            return `${getData(item, propmap.NAME)},${getData(item, propmap.REGID)},${getPothiString(getData(item, propmap.NEEDPOTHI))},${getData(item, propmap.MOBILENO)},${getBaithakString(getData(item, propmap.NEEDCHAIR))},${getSectionName(getData(item, propmap.SECTION))},${getSectionColor(getData(item, propmap.SECTION))},${getData(item, propmap.STATUS)}\n`;
+        }
+
+        function copy(event) {
+            event.preventDefault(); // Prevent default navigation
+            //alert(filteredset.length);
+            var records = "";
+            filteredset.forEach(element => {
+
+                records += getRecordString(element);
+            });
+
+            console.log(records);
+
+            navigator.clipboard.writeText(records).then(() => {
+                alert("Copied to clipboard!");
+            }).catch(err => {
+                alert("Failed to copy text: ", err);
+            });
+        }
+        functi
         }
 
         function copy(event) {
