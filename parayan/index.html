@@ -335,10 +335,10 @@
         }
 
 	function getRecordString(item){
-            return `${getData(item, propmap.NAME)},${getData(item, propmap.REGID)},${getPothiString(getData(item, propmap.NEEDPOTHI))},${getData(item, propmap.MOBILENO)},${getBaithakString(getData(item, propmap.NEEDCHAIR))},${getSectionName(getData(item, propmap.SECTION))},${getSectionColor(getData(item, propmap.SECTION))},${getData(item, propmap.STATUS)}\n`;
+            return `${getData(item, propmap.REGID)},${getData(item, propmap.NAME)},${getPothiString(getData(item, propmap.NEEDPOTHI))},${getData(item, propmap.MOBILENO)},${getBaithakString(getData(item, propmap.NEEDCHAIR))},${getSectionName(getData(item, propmap.SECTION))},${getData(item, propmap.STATUS)}\n`;
         }
 
-        function copy(event) {
+        function copy_old(event) {
             event.preventDefault(); // Prevent default navigation
             //alert(filteredset.length);
             var records = "";
@@ -358,8 +358,8 @@
 
         function copy(event) {
             event.preventDefault(); // Prevent default navigation
-            //alert(filteredset.length);
-            var records = `Name,RegNo,Pothi,MobNo,SittingType,Section,Status\n`;
+            
+            var records = `RegNo,Name, Pothi,MobNo,SittingType,Section,Status\n`;
             filteredset.forEach(element => {
 
                 records += getRecordString(element);
