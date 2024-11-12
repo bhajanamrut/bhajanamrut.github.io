@@ -503,7 +503,7 @@
                 const markup = `${dataset.map(reg => `<div class="item" > 
                     
                     <span style="float: left;" class="${getStatusClass(reg)}">
-                        <a href='${getData(reg, propmap.EDITURL)}' target="_blank" class="${getStatusClass(reg)}">${getData(reg, propmap.NAME)}</a>
+                        <a href='#' class="${getStatusClass(reg)}">${getData(reg, propmap.NAME)}</a>
                         &nbsp;
                         <a href='./idcard2.html?name=${getData(reg, propmap.NAME)}&regno=${getData(reg, propmap.REGID)}&needchair=${getData(reg, propmap.NEEDCHAIR)}&needpothi=${getData(reg, propmap.NEEDPOTHI)}&sectionName=${getSectionName(getData(reg, propmap.SECTION))}&sectionClr=${getSectionColor(getData(reg, propmap.SECTION))}&phno=91${getData(reg, propmap.MOBILENO)}' style="display: ${getCardVisibility(reg)}; text-decoration: none;">&#128179;</a>
                         
