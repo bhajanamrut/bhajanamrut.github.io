@@ -23,7 +23,7 @@ var p2 = [
      { eng: 'pandurang ale aale', hin: 'पांडुरंग आले आले', dir: '2', id: '22' },
      { eng: 'man ki tarang mar lo', hin: 'मन की तरंग मार लो', dir: '2', id: '23' },
      { eng: 'vithu mauli jagachi', hin: 'विठू माऊली तू माऊली जगाची', dir: '2', id: '24' },
-     //{ eng: '', hin: '', dir: '2', id: '25 },
+     { eng: 'jyot milate', hin: 'ज्योत से ज्योत जगाते चलो', dir: '2', id: '25 },
      //{ eng: '', hin: '', dir: '2', id: '26 },
      //{ eng: '', hin: '', dir: '2', id: '27 },
      //{ eng: '', hin: '', dir: '2', id: '28 },
