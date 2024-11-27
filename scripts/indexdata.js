@@ -2282,7 +2282,8 @@ indexData={
   "cho": [
     43,
     244,
-    245
+    245,
+    319
   ],
   "chor": [
     43,
@@ -6912,7 +6913,8 @@ indexData={
     241,
     265,
     279,
-    286
+    286,
+    319
   ],
   "bans": [
     208
@@ -7805,7 +7807,8 @@ indexData={
   "band": [
     241,
     265,
-    279
+    279,
+    319
   ],
   "banda": [
     241
@@ -8423,7 +8426,8 @@ indexData={
     264
   ],
   "bandh": [
-    265
+    265,
+    319
   ],
   "vim": [
     265
@@ -9612,5 +9616,77 @@ indexData={
   ],
   "palakhi": [
     318
+  ],
+  "hru": [
+    319
+  ],
+  "hrud": [
+    319
+  ],
+  "hruda": [
+    319
+  ],
+  "hruday": [
+    319
+  ],
+  "hrudaya": [
+    319
+  ],
+  "hrudayac": [
+    319
+  ],
+  "hrudayach": [
+    319
+  ],
+  "hrudayachy": [
+    319
+  ],
+  "hrudayachya": [
+    319
+  ],
+  "aka": [
+    319
+  ],
+  "akas": [
+    319
+  ],
+  "akash": [
+    319
+  ],
+  "akasha": [
+    319
+  ],
+  "akashat": [
+    319
+  ],
+  "bandhi": [
+    319
+  ],
+  "bandhiy": [
+    319
+  ],
+  "bandhiya": [
+    319
+  ],
+  "bandhiyal": [
+    319
+  ],
+  "bandhiyala": [
+    319
+  ],
+  "chou": [
+    319
+  ],
+  "chouf": [
+    319
+  ],
+  "choufa": [
+    319
+  ],
+  "choufal": [
+    319
+  ],
+  "choufala": [
+    319
   ]
 }
