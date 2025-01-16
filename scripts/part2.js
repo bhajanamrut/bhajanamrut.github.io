@@ -28,7 +28,7 @@ var p2 = [
      { eng: 'akkalkot swaminchi palakhi', hin: 'अक्कलकोट स्वामींची पालखी निघाली', dir: '2', id: '27' },
      { eng: 'hrudayachya akashat bandhiyala choufala', hin: 'हृदयाच्या आकाशात बांधियला चौफाळा', dir: '2', id: '28' },
      { eng: 'dhanya dhanya ati', hin: 'धन्य धन्य अति धन्य', dir: '2', id: '29' },
-     //{ eng: '', hin: '', dir: '2', id: '30' },
+     { eng: 'hasat ali anganamadhye jagadambe', hin: 'हासत आली अंगणामध्ये जगदंबे', dir: '2', id: '30' },
      //{ eng: '', hin: '', dir: '2', id: '31' },
      //{ eng: '', hin: '', dir: '2', id: '32' },
      //{ eng: '', hin: '', dir: '2', id: '33' },
