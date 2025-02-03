@@ -161,7 +161,7 @@
     }
 
     var updateList = () => {
-     	const markup = `${filteredBhajans.map(bhajan => `<div class="item" file-id="${bhajan.dir}-${bhajan.id}"><a href="./bhajan.html?b=${bhajan.dir}-${bhajan.id}"><span style="float: left;">${bhajan.hin}</span><span style="float: right;">${bhajan.dir} - ${bhajan.id.split('.')[0] }</span></a></div>`).join('')}`;
+     	const markup = `${filteredBhajans.map(bhajan => `<div class="item" file-id="${bhajan.dir}-${bhajan.id}"><a class="inner-item" href="./bhajan.html?b=${bhajan.dir}-${bhajan.id}"><span style="float: left;">${bhajan.hin}</span><span style="float: right;">${bhajan.dir} - ${bhajan.id.split('.')[0] }</span></a></div>`).join('')}`;
         listElement.innerHTML = markup;
     }
 
