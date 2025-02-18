@@ -24,7 +24,7 @@ var p2 = [
      { eng: 'man ki tarang mar lo', hin: 'मन की तरंग मार लो', dir: '2', id: '23' },
      { eng: 'vithu mauli jagachi', hin: 'विठू माऊली तू माऊली जगाची', dir: '2', id: '24' },
      { eng: 'jyot milate', hin: 'ज्योत से ज्योत जगाते चलो', dir: '2', id: '25' },
-     { eng: 'akkalkoti dhyan lagale', hin: 'अक्कलकोटी  ध्यान लागले माझ्या मनाचे', dir: '2', id: '26' },
+     { eng: 'akkalkoti dhyan lagale', hin: 'अक्कलकोटी  ध्यान लागले', dir: '2', id: '26' },
      { eng: 'akkalkot swaminchi palakhi', hin: 'अक्कलकोट स्वामींची पालखी निघाली', dir: '2', id: '27' },
      { eng: 'hrudayachya akashat bandhiyala choufala', hin: 'हृदयाच्या आकाशात बांधियला चौफाळा', dir: '2', id: '28' },
      { eng: 'dhanya dhanya ati', hin: 'धन्य धन्य अति धन्य', dir: '2', id: '29' },
