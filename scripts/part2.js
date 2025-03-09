@@ -36,7 +36,7 @@ var p2 = [
      { eng: 'sangave kavanya thaya jave', hin: 'सांगावे, कवण्या ठाया जावे?', dir: '2', id: '35' },
      { eng: 'Adivo Alladivo', hin: 'अडीवो अल्लडिवो ', dir: '2', id: '36' },
      { eng: 'duniya chale na shri ram ke bina', hin: 'दुनिया चले ना श्री राम के बिना', dir: '2', id: '37' },
-     //{ eng: '', hin: '', dir: '2', id: '38' },
+     { eng: 'krushnatirichya vasanarya', hin: 'कृष्णातिरीच्या वसणाऱ्या', dir: '2', id: '38' },
      //{ eng: '', hin: '', dir: '2', id: '39' },
      //{ eng: '', hin: '', dir: '2', id: '41' },
      //{ eng: '', hin: '', dir: '2', id: '42' },
