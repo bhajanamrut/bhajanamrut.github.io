@@ -34,7 +34,7 @@ var p2 = [
      { eng: 'aaj aj mazya bhajanat pandurang', hin: 'आज माझ्या भजनात पाडुरंग आला', dir: '2', id: '33' },
      { eng: 'satyam shivam sundaram', hin: 'सत्यम शिवम सुन्दरम', dir: '2', id: '34' },
      { eng: 'sangave kavanya thaya jave', hin: 'सांगावे, कवण्या ठाया जावे?', dir: '2', id: '35' },
-     //{ eng: '', hin: '', dir: '2', id: '36' },
+     { eng: 'Adivo Alladivo', hin: 'अडीवो अल्लडिवो ', dir: '2', id: '36' },
      //{ eng: '', hin: '', dir: '2', id: '37' },
      //{ eng: '', hin: '', dir: '2', id: '38' },
      //{ eng: '', hin: '', dir: '2', id: '39' },
