@@ -32,7 +32,7 @@ var p2 = [
      { eng: 'runi aho amhi tuze gururaya', hin: 'ऋणी आहो आम्ही तुझे गुरुराया', dir: '2', id: '31' },
      { eng: 'sadguru yeshil ka', hin: 'सद्गुरु येशील का?', dir: '2', id: '32' },
      { eng: 'aaj aj mazya bhajanat pandurang', hin: 'आज माझ्या भजनात पाडुरंग आला', dir: '2', id: '33' },
-     //{ eng: '', hin: '', dir: '2', id: '34' },
+     { eng: 'satyam shivam sundaram', hin: 'सत्यम शिवम सुन्दरम', dir: '2', id: '34' },
      //{ eng: '', hin: '', dir: '2', id: '35' },
      //{ eng: '', hin: '', dir: '2', id: '36' },
      //{ eng: '', hin: '', dir: '2', id: '37' },
