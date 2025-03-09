@@ -2479,7 +2479,8 @@ indexData={
   ],
   "vas": [
     47,
-    195
+    195,
+    329
   ],
   "chan": [
     47,
@@ -5158,7 +5159,8 @@ indexData={
     293,
     297,
     298,
-    301
+    301,
+    329
   ],
   "krup": [
     132,
@@ -9213,22 +9215,26 @@ indexData={
   "krus": [
     297,
     298,
-    301
+    301,
+    329
   ],
   "krush": [
     297,
     298,
-    301
+    301,
+    329
   ],
   "krushn": [
     297,
     298,
-    301
+    301,
+    329
   ],
   "krushna": [
     297,
     298,
-    301
+    301,
+    329
   ],
   "houn": [
     297
@@ -9872,5 +9878,47 @@ indexData={
   ],
   "bina": [
     328
+  ],
+  "krushnat": [
+    329
+  ],
+  "krushnati": [
+    329
+  ],
+  "krushnatir": [
+    329
+  ],
+  "krushnatiri": [
+    329
+  ],
+  "krushnatiric": [
+    329
+  ],
+  "krushnatirich": [
+    329
+  ],
+  "krushnatirichy": [
+    329
+  ],
+  "krushnatirichya": [
+    329
+  ],
+  "vasa": [
+    329
+  ],
+  "vasan": [
+    329
+  ],
+  "vasana": [
+    329
+  ],
+  "vasanar": [
+    329
+  ],
+  "vasanary": [
+    329
+  ],
+  "vasanarya": [
+    329
   ]
 }
