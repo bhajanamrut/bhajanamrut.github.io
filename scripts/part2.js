@@ -40,7 +40,7 @@ var p2 = [
      { eng: 'alikad ye mala palikad', hin: 'अलीकड ये, मला पलीकड ने', dir: '2', id: '39' },
      { eng: 'sanso saso ki mala', hin: 'साँसों की माला पे', dir: '2', id: '40' },
      { eng: 'karuna tripadi', hin: 'करुणात्रिपदी', dir: '2', id: '41' },
-     //{ eng: '', hin: '', dir: '2', id: '43' },
+     { eng: 'ram ayenge', hin: 'राम आयेंगे', dir: '2', id: '42' },
      //{ eng: '', hin: '', dir: '2', id: '44' },
      //{ eng: '', hin: '', dir: '2', id: '45' },
      //{ eng: '', hin: '', dir: '2', id: '46' },
