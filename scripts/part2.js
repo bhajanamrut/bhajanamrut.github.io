@@ -41,7 +41,7 @@ var p2 = [
      { eng: 'sanso saso ki mala', hin: 'साँसों की माला पे', dir: '2', id: '40' },
      { eng: 'karuna tripadi', hin: 'करुणात्रिपदी', dir: '2', id: '41' },
      { eng: 'ram ayenge', hin: 'राम आयेंगे', dir: '2', id: '42' },
-     //{ eng: '', hin: '', dir: '2', id: '44' },
+     { eng: 'mojata yeina mapan evada vaibhav gajanan', hin: 'एवढा वैभव दिलाय गजानन बाबांन', dir: '2', id: '43' },
      //{ eng: '', hin: '', dir: '2', id: '45' },
      //{ eng: '', hin: '', dir: '2', id: '46' },
      //{ eng: '', hin: '', dir: '2', id: '47' },
