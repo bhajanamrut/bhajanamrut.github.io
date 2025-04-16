@@ -43,7 +43,7 @@ var p2 = [
      { eng: 'ram ayenge', hin: 'राम आयेंगे', dir: '2', id: '42' },
      { eng: 'mojata yeina mapan evada vaibhav gajanan', hin: 'एवढा वैभव दिलाय गजानन बाबांन', dir: '2', id: '43' },
      { eng: 'kanha tu man mohana', hin: 'कान्हा तु मन मोहना', dir: '2', id: '44' },
-   //{ eng: '', hin: '', dir: '2', id: '45' },
+     { eng: 'mat kar tu abhiman', hin: 'मत कर तूँ, अभिमान', dir: '2', id: '45' },
      //{ eng: '', hin: '', dir: '2', id: '46' },
      //{ eng: '', hin: '', dir: '2', id: '47' },
      //{ eng: '', hin: '', dir: '2', id: '48' },
