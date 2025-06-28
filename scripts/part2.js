@@ -45,7 +45,7 @@ var p2 = [
      { eng: 'kanha tu man mohana', hin: 'कान्हा तु मन मोहना', dir: '2', id: '44' },
      { eng: 'mat kar tu abhiman', hin: 'मत कर तूँ, अभिमान', dir: '2', id: '45' },
      { eng: 'vitthal viththal mhanuya', hin: 'विठ्ठल विठ्ठल मुखे म्हणूया', dir: '2', id: '46' },
-     //{ eng: '', hin: '', dir: '2', id: '47' },
+     { eng: 'bharud savalya hari ekuya tari', hin: 'भारूड - सावळ्या हरी एकुया तरी', dir: '2', id: '47' },
      //{ eng: '', hin: '', dir: '2', id: '48' },
      //{ eng: '', hin: '', dir: '2', id: '49' },
      //{ eng: '', hin: '', dir: '2', id: '50' },
