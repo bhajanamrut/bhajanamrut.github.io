@@ -1,6 +1,7 @@
 const fs = require('fs');
 const p1 = require('./part1');
 const p2 = require('./part2');
+const p3 = require('./part3');
 const filePath = './scripts/indexdata.js';
 
 (function () {
@@ -27,7 +28,7 @@ const filePath = './scripts/indexdata.js';
     }
 
     var list = p1;
-    list = list.concat(p2);
+    list = list.concat(p2).concat(p3);
         
     //for(let i=0; i<2; i++) {
     for(let i=0; i<list.length; i++) {

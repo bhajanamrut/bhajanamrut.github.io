@@ -6,7 +6,7 @@
 (function () {
     "use strict";
     var searchBox, listElement, searchBtn, progressBar, pending=0, errors=0;
-    var allBhajans = p1.concat(p2);
+    var allBhajans = p1.concat(p2).concat(p3);
     var filteredBhajans = allBhajans;
     var timeout;
     var evtdata;
