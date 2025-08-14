@@ -336,6 +336,7 @@
             const today = new Date();
             const currentMonth = today.getMonth();
             const currentYear = today.getFullYear();
+            const currentDay = today.getDate();
 
             const cards = document.querySelectorAll(".event-card");
             let targetCard = null;
@@ -344,7 +345,7 @@
                 const dateElement = card.querySelector(".event-date");
                 if (dateElement) {
                     const cardDate = new Date(dateElement.textContent);
-                    if (cardDate.getMonth() === currentMonth && cardDate.getFullYear() === currentYear) {
+                    if (cardDate.getMonth() === currentMonth && cardDate.getFullYear() === currentYear && cardDate.getDate() >= currentDay) {
                         targetCard = card;
                         break;
                     }
