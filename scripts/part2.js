@@ -48,8 +48,8 @@ var p2 = [
      { eng: 'bharud savalya hari ekuya tari', hin: 'भारूड - सावळ्या हरी एकुया तरी', dir: '2', id: '47' },
      { eng: 'ubha kasa rahila vitevari', hin: 'उभा कसा राहिला विटेवरी', dir: '2', id: '48' },
      { eng: 'itani shakti hame dena data', hin: 'इतनी शक्ति हमें देना दाता', dir: '2', id: '49' },
+     { eng: 'vitthala viththala ye re pandhari raya', hin: 'विठ्ठला ये रे पंढरी राया', dir: '2', id: '50' },
 
-     //{ eng: '', hin: '', dir: '2', id: '50' },
      //{ eng: '', hin: '', dir: '2', id: '51' },
 
 ];
