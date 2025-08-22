@@ -229,22 +229,34 @@
         window.addEventListener('load', onLoad, false);
 
         const propmap = {
-                'NUM': 0,
-                'DATE': 1,
-                'DAY': 2,
-                'TIME': 3,
-                'OCCASION': 4,
-                'VENUE': 5,
-                'PLACE': 6,
-                'MAP': 7,
-                'HOSTNAME': 8,
-                'HOSTPHONE': 9,
-                'LANDMARK': 10
+                'STATUS': 0,
+                'NUM': 1,
+                'DATE': 2,
+                'DAY': 3,
+                'TIME': 4,
+                'OCCASION': 5,
+                'VENUE': 6,
+                'PLACE': 7,
+                'LANDMARK': 8,
+                'MAP': 9,
+                'HOSTNAME': 10,
+                'HOSTPHONE': 11
             };
+
+        function filter(rows){
+            const colIndex = 0;                  // Column "L" = 12th column, index 11 (0-based)
+
+            const filteredRows = rows.slice(1).filter(row => {
+            const value = row[colIndex] ? row[colIndex].toLowerCase() : "";
+            return value === "confirmed";
+            });
+
+            return filteredRows;
+        }
         
         function fetchEventsAndDisplay() {
             const sheetId = '1BFfMs1439CClB5YfNGov_GeUYbESKHq7feKa1ONk2W0'; // Replace with your actual sheet ID
-            const sheetName = 'Sheet1!A2:K1000'; // Replace with the name of your sheet
+            const sheetName = 'Sheet1!A2:L1000'; // Replace with the name of your sheet
             const apiKey = 'AIzaSyBTkT9f1ceMamAPhKhpMkUItgVIsH4RJuU'; // Optional, can be omitted if not using an API key
 
             const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${sheetName}?key=${apiKey}`;
@@ -259,7 +271,9 @@
                 })
                 .then(data => {
                     console.log('Sheet Data:', data.values); // Log the values in the sheet
-                    bhajanEvents = data.values
+                    const rows = data.values || [];
+                    bhajanEvents = filter(rows);
+                    console.log('Filtered Data:', bhajanEvents); // Log the values in the sheet
                     display();
                     scrollToCurrentMonth();
                 })
