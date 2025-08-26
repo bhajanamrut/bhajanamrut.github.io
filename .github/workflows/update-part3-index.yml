@@ -36,3 +36,5 @@ jobs:
           git add scripts/part3.js
           git commit -m "Update part3.js with new entries" || echo "No changes to commit"
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
