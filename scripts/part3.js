@@ -64,6 +64,12 @@ var p3 = [
         hin: "मूळ लिंगाचे दर्शनीं",
         dir: "3",
         id: "11"
+    },
+    {
+        eng: "dei mala ituke raghuraya",
+        hin: "देई मला इतुके रघुराया",
+        dir: "3",
+        id: "12"
     }
 ];
 
