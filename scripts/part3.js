@@ -94,6 +94,12 @@ var p3 = [
         hin: "भजन घडों तुझी स्तुती",
         dir: "3",
         id: "16"
+    },
+    {
+        eng: "kapikula hanumanta",
+        hin: "कपिकुळ हणुमंत",
+        dir: "3",
+        id: "17"
     }
 ];
 
