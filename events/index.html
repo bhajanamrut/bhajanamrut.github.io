@@ -401,7 +401,7 @@
         function buildWhatsAppMessage(evt) {
             let parts = [];
 
-            if (evt[propmap.NUM]) parts.push(`*भजन संध्या #${evt[propmap.NUM]}*`);
+            if (evt[propmap.NUM]) parts.push(`*निःस्वार्थ भजन सेवा #${evt[propmap.NUM]}*`);
             if (evt[propmap.DATE]) parts.push(`Date: ${new Date(evt[propmap.DATE]).toDateString()}`);
             if (evt[propmap.TIME]) parts.push(`Time: ${evt[propmap.TIME]}`);
             if (evt[propmap.OCCASION]) parts.push(`Occasion: ${evt[propmap.OCCASION]}`);
