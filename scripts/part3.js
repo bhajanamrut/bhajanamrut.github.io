@@ -60,7 +60,7 @@ var p3 = [
         id: "10"
     },
     {
-        eng: "mula linggache darshanim",
+        eng: "mula lingache darshani",
         hin: "मूळ लिंगाचे दर्शनीं",
         dir: "3",
         id: "11"
