@@ -3,8 +3,10 @@ run-name: Regenerating index
 
 on:
   push:
-    branches: ['main']
-    paths: ['scripts/**']
+    branches:
+      - main
+    paths:
+      - "scripts/*.js"   # trigger only when js files are added or updated
     
 jobs:
   update-file:
