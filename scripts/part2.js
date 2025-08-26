@@ -54,8 +54,8 @@ var p2 = [
      { eng: 'yashomati maiyya se bole nand lala', hin: 'यशोमती मैया से बोले नंदलाला', dir: '2', id: '53' },
      { eng: 'jay govinda gopala', hin: 'जय गोविंदा गोपाला', dir: '2', id: '54' },
      { eng: 'gananayakay ganadevatay ganadhyakshay dhimahi', hin: 'गणनायकाय गणदेवताय गणाध्यक्षाय धीमहि ', dir: '2', id: '55' },
-     { eng: 'amhi chukalo jari tari kahi chuko nako ambabai', hin: 'आम्ही चुकलो जरी तरी काही', dir: '2', id: '56' },
-
+     
+     //{ eng: '', hin: '', dir: '2', id: '56' },
      //{ eng: '', hin: '', dir: '2', id: '57' },
      //{ eng: '', hin: '', dir: '2', id: '58' },
      //{ eng: '', hin: '', dir: '2', id: '59' },
