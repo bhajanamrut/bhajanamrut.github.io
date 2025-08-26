@@ -88,6 +88,12 @@ var p3 = [
         hin: "रामाचीया दूता अंजनीच्या सुता",
         dir: "3",
         id: "15"
+    },
+    {
+        eng: "bhajana ghadom tujhi stuti",
+        hin: "भजन घडों तुझी स्तुती",
+        dir: "3",
+        id: "16"
     }
 ];
 
