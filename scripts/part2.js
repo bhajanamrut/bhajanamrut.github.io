@@ -49,8 +49,16 @@ var p2 = [
      { eng: 'ubha kasa rahila vitevari', hin: 'उभा कसा राहिला विटेवरी', dir: '2', id: '48' },
      { eng: 'itani shakti hame dena data', hin: 'इतनी शक्ति हमें देना दाता', dir: '2', id: '49' },
      { eng: 'vitthala viththala ye re pandhari raya', hin: 'विठ्ठला ये रे पंढरी राया', dir: '2', id: '50' },
+     { eng: 'shyam teri bansi pukare radha nam', hin: 'श्याम तेरी बंसी पुकारे राधा नाम', dir: '2', id: '51' },
+     { eng: 'ek radha ek meera mira', hin: 'एक राधा, एक मीरा', dir: '2', id: '52' },
+     { eng: 'yashomati maiyya se bole nand lala', hin: 'यशोमती मैया से बोले नंदलाला', dir: '2', id: '53' },
+     { eng: 'jay govinda gopala', hin: 'जय गोविंदा गोपाला', dir: '2', id: '54' },
+     { eng: 'gananayakay ganadevatay ganadhyakshay dhimahi', hin: 'गणनायकाय गणदेवताय गणाध्यक्षाय धीमहि ', dir: '2', id: '55' },
+     { eng: 'amhi chukalo jari tari kahi chuko nako ambabai', hin: 'आम्ही चुकलो जरी तरी काही', dir: '2', id: '56' },
 
-     //{ eng: '', hin: '', dir: '2', id: '51' },
+     //{ eng: '', hin: '', dir: '2', id: '57' },
+     //{ eng: '', hin: '', dir: '2', id: '58' },
+     //{ eng: '', hin: '', dir: '2', id: '59' },
 
 ];
 
