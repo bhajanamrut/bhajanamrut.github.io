@@ -72,7 +72,7 @@ var p3 = [
         id: "12"
     },
     {
-        eng: "rama tujhicha ana",
+        eng: "rama tujhicha aan",
         hin: "रामा तुझीच आण",
         dir: "3",
         id: "13"
