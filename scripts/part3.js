@@ -52,6 +52,18 @@ var p3 = [
         hin: "संतांची मी दासी दासी",
         dir: "3",
         id: "9"
+    },
+    {
+        eng: "dekho dekho ri sakhi",
+        hin: "देखो देखो री सखी",
+        dir: "3",
+        id: "10"
+    },
+    {
+        eng: "mula linggache darshanim",
+        hin: "मूळ लिंगाचे दर्शनीं",
+        dir: "3",
+        id: "11"
     }
 ];
 
