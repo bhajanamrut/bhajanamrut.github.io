@@ -46,8 +46,13 @@ var p3 = [
         hin: "मन लागा मेंरा अवधूता से",
         dir: "3",
         id: "8"
+    },
+    {
+        eng: "santanchi mi dasi dasi",
+        hin: "संतांची मी दासी दासी",
+        dir: "3",
+        id: "9"
     }
-
 ];
 
 if (typeof module === 'object' && module.exports) {
