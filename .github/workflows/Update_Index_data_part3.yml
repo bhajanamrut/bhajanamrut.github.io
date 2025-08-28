@@ -54,9 +54,9 @@ jobs:
           git pull origin ${{ github.ref }}
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
-          node-version: "20"   # updated from Node 14 → LTS
+          node-version: "14"   # updated from Node 14 → LTS
 
       - name: Install dependencies
         run: npm install
