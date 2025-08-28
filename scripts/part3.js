@@ -100,6 +100,12 @@ var p3 = [
         hin: "कपिकुळ हणुमंत",
         dir: "3",
         id: "17"
+    },
+    {
+        eng: "chala premapurasi jau.n",
+        hin: "चला प्रेमपुरासी जाऊँ",
+        dir: "3",
+        id: "18"
     }
 ];
 
