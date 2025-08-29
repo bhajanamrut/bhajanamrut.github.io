@@ -357,10 +357,15 @@
                 const dateElement = card.querySelector(".event-date");
                 if (dateElement) {
                     const cardDate = new Date(dateElement.textContent);
-                    if (cardDate.getMonth() === currentMonth && cardDate.getFullYear() === currentYear && cardDate.getDate() >= currentDay) {
-                        targetCard = card;
-                        break;
+                    if (cardDate.getMonth() === currentMonth && cardDate.getFullYear() === currentYear) {
+                        if(cardDate.getDate() <= currentDay) {
+                            targetCard = card;
+                        }
+                        else {
+                            break;    
+                        }
                     }
+                    
                 }
             }
 
