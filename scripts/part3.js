@@ -118,6 +118,12 @@ var p3 = [
         hin: "सांब सदाशिव शिव",
         dir: "3",
         id: "20"
+    },
+    {
+        eng: "shiva shangkara shambho hara hara hara",
+        hin: "शिव शंकर शंभो हर हर हर",
+        dir: "3",
+        id: "21"
     }
 ];
 
