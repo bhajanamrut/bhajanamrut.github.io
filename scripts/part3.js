@@ -130,6 +130,12 @@ var p3 = [
         hin: "भोला तोरी सूरत लागत नीको",
         dir: "3",
         id: "22"
+    },
+    {
+        eng: "bhavani mi tujha bhutya khara",
+        hin: "भवानी मी तुझा भूत्या खरा",
+        dir: "3",
+        id: "23"
     }
 ];
 
