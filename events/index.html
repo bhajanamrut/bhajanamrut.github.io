@@ -247,7 +247,7 @@
             const colIndex = 0;                  // Column "L" = 12th column, index 11 (0-based)
 
             const filteredRows = rows.slice(1).filter(row => {
-            const value = row[colIndex] ? row[colIndex].toLowerCase() : "";
+            const value = row[colIndex] ? row[colIndex].toLowerCase().trim() : "";
             return value === "confirmed";
             });
 
