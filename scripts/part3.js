@@ -124,6 +124,12 @@ var p3 = [
         hin: "शिव शंकर शंभो हर हर हर",
         dir: "3",
         id: "21"
+    },
+    {
+        eng: "bhola tori surata lagata niko",
+        hin: "भोला तोरी सूरत लागत नीको",
+        dir: "3",
+        id: "22"
     }
 ];
 
