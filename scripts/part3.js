@@ -142,6 +142,12 @@ var p3 = [
         hin: "श्री देवि त्रिपुरसुंदरी",
         dir: "3",
         id: "24"
+    },
+    {
+        eng: "sakha dinavatsala pandhariraya",
+        hin: "सखा दीनवत्सल पंढरिराय",
+        dir: "3",
+        id: "25"
     }
 ];
 
