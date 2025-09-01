@@ -148,6 +148,12 @@ var p3 = [
         hin: "सखा दीनवत्सल पंढरिराय",
         dir: "3",
         id: "25"
+    },
+    {
+        eng: "pahile gadeno vithuraja",
+        hin: "पाहिले गडेनो विठुराज",
+        dir: "3",
+        id: "26"
     }
 ];
 
