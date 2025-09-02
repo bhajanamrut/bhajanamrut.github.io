@@ -166,6 +166,12 @@ var p3 = [
         hin: "वो सखी कंडे नानु",
         dir: "3",
         id: "28"
+    },
+    {
+        eng: "bhai more nayana base raghubira",
+        hin: "भाई मोरे नयन बसे रघुबीर",
+        dir: "3",
+        id: "29"
     }
 ];
 
