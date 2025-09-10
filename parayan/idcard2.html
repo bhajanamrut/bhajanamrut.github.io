@@ -118,7 +118,7 @@
 		const regno = getParameterByName('regno') || 'नोंदणी क्रमांक'; 
 		const needpothi = (getParameterByName('needpothi')?.toLowerCase() === 'yes'?'पाहिजे':'स्वतःची आहे') || 'स्वतःची आहे/पाहिजे'; 
 		const needchair = (getParameterByName('needchair')?.toLowerCase() === 'yes'?'खुर्चीवर बसुन':'खाली बसून') || 'खुर्चीवर बसुन/खाली बसून'; 
-		const sectionName = (getParameterByName('sectionName')?.toUpperCase()) || 'बैठक कक्ष'; 
+		const sectionName = (getParameterByName('sectionName')?.toUpperCase()) || 'HYDERABAD'; 
 		const sectionColor = (getParameterByName('sectionClr')?.toUpperCase()) || 'बैठक कक्ष'; 
 		const phoneNo = (getParameterByName('phno')?.toUpperCase()) || ''; 
 
@@ -158,7 +158,8 @@
 				<td class="rhdr">Section / बैठक कक्ष :</td><td></td>
 			</tr>
             <tr>
-				<td class="rval"><span style="float:left; width: 20px; height: 20px; background-color: #${sectionColor}; border-radius: 10px; border: 1px solid black;" ></span> &nbsp ${sectionName} </td>
+				<!--<td class="rval"><span style="float:left; width: 20px; height: 20px; background-color: #${sectionColor}; border-radius: 10px; border: 1px solid black;" ></span> &nbsp ${sectionName} </td>-->
+				<td class="rval"> <a href='https://www.google.com/search?q=pincode+of+${sectionName}+hyderabad'>${sectionName} </td>
 			</tr>
 			<tr>
 				<td><div style="width: 260px; heigh:1px; background-color: lightgrey; font-size: 1px;">&nbsp</div></td>

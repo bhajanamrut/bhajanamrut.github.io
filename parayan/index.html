@@ -503,6 +503,27 @@
                 const markup = `${dataset.map(reg => `<div class="item" > 
                     
                     <span style="float: left;" class="${getStatusClass(reg)}">
+                        <a href='./idcard2.html?name=${getData(reg, propmap.NAME)}&regno=${getData(reg, propmap.REGID)}&needchair=${getData(reg, propmap.NEEDCHAIR)}&needpothi=${getData(reg, propmap.NEEDPOTHI)}&sectionName=${getData(reg, propmap.ADDRESS)}&sectionClr=${getSectionColor(getData(reg, propmap.SECTION))}&phno=91${getData(reg, propmap.MOBILENO)}' class="${getStatusClass(reg)}">${getData(reg, propmap.NAME)}</a>
+                        &nbsp;
+                        <a href='./idcard2.html?name=${getData(reg, propmap.NAME)}&regno=${getData(reg, propmap.REGID)}&needchair=${getData(reg, propmap.NEEDCHAIR)}&needpothi=${getData(reg, propmap.NEEDPOTHI)}&sectionName=${getData(reg, propmap.ADDRESS)}&sectionClr=${getSectionColor(getData(reg, propmap.SECTION))}&phno=91${getData(reg, propmap.MOBILENO)}' style="display: ${getCardVisibility(reg)}; text-decoration: none;">&#128179;</a>
+                        
+                        </span>
+                        <span class="warning" style="display: ${getData(reg, propmap.INCOMPLETE)?'inline':'none'};">&#9888</span>
+                    <span style="float: right;"><a href='#'>${getData(reg, propmap.MOBILENO)}</a></span></div>`
+                ).join('')}`;
+                listElement.innerHTML = markup;
+            }
+        }
+
+        function updateList_orig(){
+            if(filteredset){
+                var dataset = filteredset;
+                const listElement = document.getElementById('RegList');
+                //const markup = `${filteredBhajans.map(regData => `<div class="item"><a href="./bhajan.html?b=${bhajan.dir}-${bhajan.id}"><span style="float: left;">${bhajan.hin}</span><span style="float: right;">${bhajan.dir} - ${bhajan.id.split('.')[0] }</span></a></div>`).join('')}`;
+                //${reg[9]?'<span class="warning">&#9888</span>':'<span class="success">&#10003</span>'} 
+                const markup = `${dataset.map(reg => `<div class="item" > 
+                    
+                    <span style="float: left;" class="${getStatusClass(reg)}">
                         <a href='#' class="${getStatusClass(reg)}">${getData(reg, propmap.NAME)}</a>
                         &nbsp;
                         <a href='./idcard2.html?name=${getData(reg, propmap.NAME)}&regno=${getData(reg, propmap.REGID)}&needchair=${getData(reg, propmap.NEEDCHAIR)}&needpothi=${getData(reg, propmap.NEEDPOTHI)}&sectionName=${getSectionName(getData(reg, propmap.SECTION))}&sectionClr=${getSectionColor(getData(reg, propmap.SECTION))}&phno=91${getData(reg, propmap.MOBILENO)}' style="display: ${getCardVisibility(reg)}; text-decoration: none;">&#128179;</a>
