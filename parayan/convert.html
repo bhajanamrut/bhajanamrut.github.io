@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>itrans Devanagari to Latin Transliteration</title>
+  <script src="https://cdn.jsdelivr.net/npm/@indic-transliteration/sanscript@1.3.3/sanscript.js"></script>
+  
+  <!-- Adjust version as needed -->
+</head>
+<body>
+  <input type="text" id="devanagariText" value="राजेश मुळे" style="width:300px">
+  <button onclick="transliterate()">Convert</button>
+  <p>Result: <span id="latinOutput"></span></p>
+
+  <script>
+    function transliterate() {
+      const input = document.getElementById('devanagariText').value;
+      // Convert Devanagari to IAST; adjust scheme as needed
+      const result = Sanscript.t(input, 'devanagari', 'itrans');
+      var out = result.replace(/\b\w/g, c => c.toUpperCase());
+      document.getElementById('latinOutput').innerText = out;
+    }
+  </script>
+</body>
+</html>
