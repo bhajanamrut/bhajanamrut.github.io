@@ -1,66 +1,346 @@
 var p2 = [
-     { eng: 'devi navaratri arati ashwin masi shukla', hin: 'नवरात्र देवी आरती', dir: '2', id: '1' },
-     { eng: 'devi aai bhavani tuzya krupene', hin: 'आई भवानी तुझ्या कृपेने', dir: '2', id: '2' },
-     { eng: 'devi chalo bulava aya hai', hin: 'चलो बुलावा आया है', dir: '2', id: '3' },
-     { eng: 'gajanan shegaon nivasi maharaj mere', hin: 'शेगांव निवासी, महाराज मेरे', dir: '2', id: '4' }, 
-     { eng: 'devi kya shan shaan hai tulaja', hin: 'क्या शान है तुलजा भवानी की', dir: '2', id: '5' },
-     { eng: 'krushna veda houni nache anand', hin: 'वेडा होऊनी नाचे आनंद', dir: '2', id: '6' },
-     { eng: 'krushna savaliya giridhari lal khabar', hin: 'सांवलिया गिरिधारी लाल खबर लेना मेरी', dir: '2', id: '7' },
-     { eng: 'devi painjanacha nad naad', hin: 'पैंजनाचा नाद', dir: '2', id: '8' },
-     { eng: 'devi dongaravari', hin: 'डोंगरावरी डोंगर ग', dir: '2', id: '9' },
-     { eng: 'krushna achyutam keshavam', hin: 'अच्चुतम केशवं कृष्ण दामोदरं', dir: '2', id: '10' },
-     { eng: 'ram nadatuni naad nirmito', hin: 'नादातुनी या नाद निर्मितो ', dir: '2', id: '11' },
-     { eng: 'devi adimaya ambabai sarya duniyechi', hin: 'आदिमाया अंबाबाई साऱ्या दुनियेची', dir: '2', id: '12' },
-     { eng: 'nav swaminche yeta mazya', hin: 'नाव स्वामींचे येता माझ्या', dir: '2', id: '13' },
-     { eng: 'devi ashwin mahinya ali khelat', hin: 'अश्वीन महीन्यात आली खेळत खेळत', dir: '2', id: '14' },
-     { eng: 'swami bhiu nako mi tuzya pathishi aahe', hin: 'भिऊ नको मी तुझ्या पाठीशी आहे', dir: '2', id: '15' },
-     { eng: 'kiti sukh hai', hin: 'किति सुख हे किती', dir: '2', id: '16' }, 
-     { eng: 'datta namacha mahima', hin: 'दत्त दत्त नामाचा महिमा', dir: '2', id: '17' },
-     { eng: 'har sans saas me sumiran', hin: 'हर सांस मे हो सुमिरन तेरा', dir: '2', id: '18' },
-     { eng: 'he dukha dukkha bhanjan', hin: 'हे दुःख भन्जन, मारुती नंदन', dir: '2', id: '19' },
-     { eng: 'jalato ha nandadip', hin: 'जळतो हा नंदादीप', dir: '2', id: '20' },
-     { eng: 'tari mala jagadambe', hin: 'तारी मला जगदंबे', dir: '2', id: '21' },
-     { eng: 'pandurang ale aale', hin: 'पांडुरंग आले आले', dir: '2', id: '22' },
-     { eng: 'man ki tarang mar lo', hin: 'मन की तरंग मार लो', dir: '2', id: '23' },
-     { eng: 'vithu mauli jagachi', hin: 'विठू माऊली तू माऊली जगाची', dir: '2', id: '24' },
-     { eng: 'jyot milate', hin: 'ज्योत से ज्योत जगाते चलो', dir: '2', id: '25' },
-     { eng: 'akkalkoti dhyan lagale', hin: 'अक्कलकोटी  ध्यान लागले', dir: '2', id: '26' },
-     { eng: 'akkalkot swaminchi palakhi', hin: 'अक्कलकोट स्वामींची पालखी निघाली', dir: '2', id: '27' },
-     { eng: 'hrudayachya akashat bandhiyala choufala', hin: 'हृदयाच्या आकाशात बांधियला चौफाळा', dir: '2', id: '28' },
-     { eng: 'dhanya dhanya ati', hin: 'धन्य धन्य अति धन्य', dir: '2', id: '29' },
-     { eng: 'hasat ali anganamadhye jagadambe', hin: 'हासत आली अंगणामध्ये जगदंबे', dir: '2', id: '30' },
-     { eng: 'runi aho amhi tuze gururaya', hin: 'ऋणी आहो आम्ही तुझे गुरुराया', dir: '2', id: '31' },
-     { eng: 'sadguru yeshil ka', hin: 'सद्गुरु येशील का?', dir: '2', id: '32' },
-     { eng: 'aaj aj mazya bhajanat pandurang', hin: 'आज माझ्या भजनात पाडुरंग आला', dir: '2', id: '33' },
-     { eng: 'satyam shivam sundaram', hin: 'सत्यम शिवम सुन्दरम', dir: '2', id: '34' },
-     { eng: 'sangave kavanya thaya jave', hin: 'सांगावे, कवण्या ठाया जावे?', dir: '2', id: '35' },
-     { eng: 'Adivo Alladivo', hin: 'अडीवो अल्लडिवो ', dir: '2', id: '36' },
-     { eng: 'duniya chale na shri ram ke bina', hin: 'दुनिया चले ना श्री राम के बिना', dir: '2', id: '37' },
-     { eng: 'krushnatirichya vasanarya', hin: 'कृष्णातिरीच्या वसणाऱ्या', dir: '2', id: '38' },
-     { eng: 'alikad ye mala palikad', hin: 'अलीकड ये, मला पलीकड ने', dir: '2', id: '39' },
-     { eng: 'sanso saso ki mala', hin: 'साँसों की माला पे', dir: '2', id: '40' },
-     { eng: 'karuna tripadi', hin: 'करुणात्रिपदी', dir: '2', id: '41' },
-     { eng: 'ram ayenge', hin: 'राम आयेंगे', dir: '2', id: '42' },
-     { eng: 'mojata yeina mapan evada vaibhav gajanan', hin: 'एवढा वैभव दिलाय गजानन बाबांन', dir: '2', id: '43' },
-     { eng: 'kanha tu man mohana', hin: 'कान्हा तु मन मोहना', dir: '2', id: '44' },
-     { eng: 'mat kar tu abhiman', hin: 'मत कर तूँ, अभिमान', dir: '2', id: '45' },
-     { eng: 'vitthal viththal mhanuya', hin: 'विठ्ठल विठ्ठल मुखे म्हणूया', dir: '2', id: '46' },
-     { eng: 'bharud savalya hari ekuya tari', hin: 'भारूड - सावळ्या हरी एकुया तरी', dir: '2', id: '47' },
-     { eng: 'ubha kasa rahila vitevari', hin: 'उभा कसा राहिला विटेवरी', dir: '2', id: '48' },
-     { eng: 'itani shakti hame dena data', hin: 'इतनी शक्ति हमें देना दाता', dir: '2', id: '49' },
-     { eng: 'vitthala viththala ye re pandhari raya', hin: 'विठ्ठला ये रे पंढरी राया', dir: '2', id: '50' },
-     { eng: 'shyam teri bansi pukare radha nam', hin: 'श्याम तेरी बंसी पुकारे राधा नाम', dir: '2', id: '51' },
-     { eng: 'ek radha ek meera mira', hin: 'एक राधा, एक मीरा', dir: '2', id: '52' },
-     { eng: 'yashomati maiyya se bole nand lala', hin: 'यशोमती मैया से बोले नंदलाला', dir: '2', id: '53' },
-     { eng: 'jay govinda gopala', hin: 'जय गोविंदा गोपाला', dir: '2', id: '54' },
-     { eng: 'gananayakay ganadevatay ganadhyakshay dhimahi', hin: 'गणनायकाय गणदेवताय गणाध्यक्षाय धीमहि ', dir: '2', id: '55' },
-     { eng: 'pav na datta paav', hin: 'पाव ना दत्ता दयाळा', dir: '2', id: '56' },
-     { eng: 'shegaon wale gajanan baba', hin: 'शेगाव वाले गजानन बाबा', dir: '2', id: '57' },
-     
-     //{ eng: '', hin: '', dir: '2', id: '58' },
-     //{ eng: '', hin: '', dir: '2', id: '59' },
-     
-
+    {
+        eng: "devi navaratri arati ashwin masi shukla",
+        hin: "नवरात्र देवी आरती",
+        dir: "2",
+        id: "1"
+    },
+    {
+        eng: "devi aai bhavani tuzya krupene",
+        hin: "आई भवानी तुझ्या कृपेने",
+        dir: "2",
+        id: "2"
+    },
+    {
+        eng: "devi chalo bulava aya hai",
+        hin: "चलो बुलावा आया है",
+        dir: "2",
+        id: "3"
+    },
+    {
+        eng: "gajanan shegaon nivasi maharaj mere",
+        hin: "शेगांव निवासी, महाराज मेरे",
+        dir: "2",
+        id: "4"
+    },
+    {
+        eng: "devi kya shan shaan hai tulaja",
+        hin: "क्या शान है तुलजा भवानी की",
+        dir: "2",
+        id: "5"
+    },
+    {
+        eng: "krushna veda houni nache anand",
+        hin: "वेडा होऊनी नाचे आनंद",
+        dir: "2",
+        id: "6"
+    },
+    {
+        eng: "krushna savaliya giridhari lal khabar",
+        hin: "सांवलिया गिरिधारी लाल खबर लेना मेरी",
+        dir: "2",
+        id: "7"
+    },
+    {
+        eng: "devi painjanacha nad naad",
+        hin: "पैंजनाचा नाद",
+        dir: "2",
+        id: "8"
+    },
+    {
+        eng: "devi dongaravari",
+        hin: "डोंगरावरी डोंगर ग",
+        dir: "2",
+        id: "9"
+    },
+    {
+        eng: "krushna achyutam keshavam",
+        hin: "अच्चुतम केशवं कृष्ण दामोदरं",
+        dir: "2",
+        id: "10"
+    },
+    {
+        eng: "ram nadatuni naad nirmito",
+        hin: "नादातुनी या नाद निर्मितो ",
+        dir: "2",
+        id: "11"
+    },
+    {
+        eng: "devi adimaya ambabai sarya duniyechi",
+        hin: "आदिमाया अंबाबाई साऱ्या दुनियेची",
+        dir: "2",
+        id: "12"
+    },
+    {
+        eng: "nav swaminche yeta mazya",
+        hin: "नाव स्वामींचे येता माझ्या",
+        dir: "2",
+        id: "13"
+    },
+    {
+        eng: "devi ashwin mahinya ali khelat",
+        hin: "अश्वीन महीन्यात आली खेळत खेळत",
+        dir: "2",
+        id: "14"
+    },
+    {
+        eng: "swami bhiu nako mi tuzya pathishi aahe",
+        hin: "भिऊ नको मी तुझ्या पाठीशी आहे",
+        dir: "2",
+        id: "15"
+    },
+    {
+        eng: "kiti sukh hai",
+        hin: "किति सुख हे किती",
+        dir: "2",
+        id: "16"
+    },
+    {
+        eng: "datta namacha mahima",
+        hin: "दत्त दत्त नामाचा महिमा",
+        dir: "2",
+        id: "17"
+    },
+    {
+        eng: "har sans saas me sumiran",
+        hin: "हर सांस मे हो सुमिरन तेरा",
+        dir: "2",
+        id: "18"
+    },
+    {
+        eng: "he dukha dukkha bhanjan",
+        hin: "हे दुःख भन्जन, मारुती नंदन",
+        dir: "2",
+        id: "19"
+    },
+    {
+        eng: "jalato ha nandadip",
+        hin: "जळतो हा नंदादीप",
+        dir: "2",
+        id: "20"
+    },
+    {
+        eng: "tari mala jagadambe",
+        hin: "तारी मला जगदंबे",
+        dir: "2",
+        id: "21"
+    },
+    {
+        eng: "pandurang ale aale",
+        hin: "पांडुरंग आले आले",
+        dir: "2",
+        id: "22"
+    },
+    {
+        eng: "man ki tarang mar lo",
+        hin: "मन की तरंग मार लो",
+        dir: "2",
+        id: "23"
+    },
+    {
+        eng: "vithu mauli jagachi",
+        hin: "विठू माऊली तू माऊली जगाची",
+        dir: "2",
+        id: "24"
+    },
+    {
+        eng: "jyot milate",
+        hin: "ज्योत से ज्योत जगाते चलो",
+        dir: "2",
+        id: "25"
+    },
+    {
+        eng: "akkalkoti dhyan lagale",
+        hin: "अक्कलकोटी  ध्यान लागले",
+        dir: "2",
+        id: "26"
+    },
+    {
+        eng: "akkalkot swaminchi palakhi",
+        hin: "अक्कलकोट स्वामींची पालखी निघाली",
+        dir: "2",
+        id: "27"
+    },
+    {
+        eng: "hrudayachya akashat bandhiyala choufala",
+        hin: "हृदयाच्या आकाशात बांधियला चौफाळा",
+        dir: "2",
+        id: "28"
+    },
+    {
+        eng: "dhanya dhanya ati",
+        hin: "धन्य धन्य अति धन्य",
+        dir: "2",
+        id: "29"
+    },
+    {
+        eng: "hasat ali anganamadhye jagadambe",
+        hin: "हासत आली अंगणामध्ये जगदंबे",
+        dir: "2",
+        id: "30"
+    },
+    {
+        eng: "runi aho amhi tuze gururaya",
+        hin: "ऋणी आहो आम्ही तुझे गुरुराया",
+        dir: "2",
+        id: "31"
+    },
+    {
+        eng: "sadguru yeshil ka",
+        hin: "सद्गुरु येशील का?",
+        dir: "2",
+        id: "32"
+    },
+    {
+        eng: "aaj aj mazya bhajanat pandurang",
+        hin: "आज माझ्या भजनात पाडुरंग आला",
+        dir: "2",
+        id: "33"
+    },
+    {
+        eng: "satyam shivam sundaram",
+        hin: "सत्यम शिवम सुन्दरम",
+        dir: "2",
+        id: "34"
+    },
+    {
+        eng: "sangave kavanya thaya jave",
+        hin: "सांगावे, कवण्या ठाया जावे?",
+        dir: "2",
+        id: "35"
+    },
+    {
+        eng: "Adivo Alladivo",
+        hin: "अडीवो अल्लडिवो ",
+        dir: "2",
+        id: "36"
+    },
+    {
+        eng: "duniya chale na shri ram ke bina",
+        hin: "दुनिया चले ना श्री राम के बिना",
+        dir: "2",
+        id: "37"
+    },
+    {
+        eng: "krushnatirichya vasanarya",
+        hin: "कृष्णातिरीच्या वसणाऱ्या",
+        dir: "2",
+        id: "38"
+    },
+    {
+        eng: "alikad ye mala palikad",
+        hin: "अलीकड ये, मला पलीकड ने",
+        dir: "2",
+        id: "39"
+    },
+    {
+        eng: "sanso saso ki mala",
+        hin: "साँसों की माला पे",
+        dir: "2",
+        id: "40"
+    },
+    {
+        eng: "karuna tripadi",
+        hin: "करुणात्रिपदी",
+        dir: "2",
+        id: "41"
+    },
+    {
+        eng: "ram ayenge",
+        hin: "राम आयेंगे",
+        dir: "2",
+        id: "42"
+    },
+    {
+        eng: "mojata yeina mapan evada vaibhav gajanan",
+        hin: "एवढा वैभव दिलाय गजानन बाबांन",
+        dir: "2",
+        id: "43"
+    },
+    {
+        eng: "kanha tu man mohana",
+        hin: "कान्हा तु मन मोहना",
+        dir: "2",
+        id: "44"
+    },
+    {
+        eng: "mat kar tu abhiman",
+        hin: "मत कर तूँ, अभिमान",
+        dir: "2",
+        id: "45"
+    },
+    {
+        eng: "vitthal viththal mhanuya",
+        hin: "विठ्ठल विठ्ठल मुखे म्हणूया",
+        dir: "2",
+        id: "46"
+    },
+    {
+        eng: "bharud savalya hari ekuya tari",
+        hin: "भारूड - सावळ्या हरी एकुया तरी",
+        dir: "2",
+        id: "47"
+    },
+    {
+        eng: "ubha kasa rahila vitevari",
+        hin: "उभा कसा राहिला विटेवरी",
+        dir: "2",
+        id: "48"
+    },
+    {
+        eng: "itani shakti hame dena data",
+        hin: "इतनी शक्ति हमें देना दाता",
+        dir: "2",
+        id: "49"
+    },
+    {
+        eng: "vitthala viththala ye re pandhari raya",
+        hin: "विठ्ठला ये रे पंढरी राया",
+        dir: "2",
+        id: "50"
+    },
+    {
+        eng: "shyam teri bansi pukare radha nam",
+        hin: "श्याम तेरी बंसी पुकारे राधा नाम",
+        dir: "2",
+        id: "51"
+    },
+    {
+        eng: "ek radha ek meera mira",
+        hin: "एक राधा, एक मीरा",
+        dir: "2",
+        id: "52"
+    },
+    {
+        eng: "yashomati maiyya se bole nand lala",
+        hin: "यशोमती मैया से बोले नंदलाला",
+        dir: "2",
+        id: "53"
+    },
+    {
+        eng: "jay govinda gopala",
+        hin: "जय गोविंदा गोपाला",
+        dir: "2",
+        id: "54"
+    },
+    {
+        eng: "gananayakay ganadevatay ganadhyakshay dhimahi",
+        hin: "गणनायकाय गणदेवताय गणाध्यक्षाय धीमहि ",
+        dir: "2",
+        id: "55"
+    },
+    {
+        eng: "pav na datta paav",
+        hin: "पाव ना दत्ता दयाळा",
+        dir: "2",
+        id: "56"
+    },
+    {
+        eng: "shegaon wale gajanan baba",
+        hin: "शेगाव वाले गजानन बाबा",
+        dir: "2",
+        id: "57"
+    }
 ];
 
 if (typeof module === 'object' && module.exports) {
