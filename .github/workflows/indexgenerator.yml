@@ -1,15 +1,15 @@
 name: Index Generator
 run-name: Regenerating index
 
+
 on:
   push:
     branches:
       - main
     paths:
       - 'scripts/*.js'
-    paths-ignore:
-      - 'scripts/indexdata.js'   # ignore the generated file to avoid retrigger loop
-  workflow_dispatch: {}          # allows manual runs from the Actions UI or gh CLI
+      - '!scripts/indexdata.js'   # exclude generated file
+  workflow_dispatch: {}
 
 permissions:
   contents: write                # ensure the job can push changes
