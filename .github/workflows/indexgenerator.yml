@@ -6,33 +6,62 @@ on:
     branches:
       - main
     paths:
-      - "remove/scripts/*.js"   # trigger only when js files are added or updated
-    
+      - 'scripts/*.js'
+    paths-ignore:
+      - 'scripts/indexdata.js'   # ignore the generated file to avoid retrigger loop
+  workflow_dispatch: {}          # allows manual runs from the Actions UI or gh CLI
+
+permissions:
+  contents: write                # ensure the job can push changes
+
+concurrency:
+  group: index-generator
+  cancel-in-progress: true
+
 jobs:
   update-file:
     runs-on: ubuntu-latest
+    # optionally skip runs triggered by the action itself:
+    if: ${{ github.actor != 'github-actions[bot]' }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          persist-credentials: true
+          fetch-depth: 0
 
-      - name: Set up Node.js
+      - name: Set up Node.js (use an LTS)
         uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '18'     # recommend a currently supported LTS
 
       - name: Install dependencies
-        run: npm install        
+        run: npm ci
 
-      - name: Update file with new indexes
+      - name: Run index generator
         run: node ./scripts/indexgenerator.js
 
-      - name: Commit changes
-        run: |
-          git config --global user.name 'github-actions'
-          git config --global user.email 'github-actions@github.com'
-          git add ./scripts/indexdata.js
-          git commit -m "Update file with new index data"
-          git push
+      # Option A: use a safe action to add & commit
+      - name: Commit & push changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: Update file with new index data [skip ci]
+          add: 'scripts/indexdata.js'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Option B: shell-based safe commit (if you prefer shell)
+      # - name: Commit & push (shell)
+      #   run: |
+      #     git config user.name "github-actions[bot]"
+      #     git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      #     git add scripts/indexdata.js
+      #     if git diff --cached --quiet; then
+      #       echo "No changes to commit"
+      #       exit 0
+      #     fi
+      #     git commit -m "Update file with new index data [skip ci]"
+      #     git push
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
