@@ -1,5 +1,5 @@
 ﻿var p1 = [
- { eng: 'panchapadi', hin: 'पंचपदी', dir: '1', id: '1.1' },
+  { eng: 'panchapadi', hin: 'पंचपदी', dir: '1', id: '1.1' },
  { eng: 'pratham tula vandito ganapati ganesh', hin: 'प्रथम तुला वंदितो', dir: '1', id: '3.1' },
  { eng: 'more ghar chalo ganaraj  ', hin: 'मोरे घर चलो गणराज', dir: '1', id: '3.2' },
  { eng: 'vadalachya uncha lata jau de', hin: 'वादळाच्या उंच लाटा जाऊ दे', dir: '1', id: '4.1' },
