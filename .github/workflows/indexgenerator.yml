@@ -37,7 +37,7 @@ jobs:
           node-version: '18'     # recommend a currently supported LTS
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Run index generator
         run: node ./scripts/indexgenerator.js
