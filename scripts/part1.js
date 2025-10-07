@@ -1780,6 +1780,84 @@
         hin: "संत कृपा झाली",
         dir: "1",
         id: "160.1"
+    },
+    {
+        eng: "hechi dana dega deva",
+        hin: "हेचि दान देगा देवा",
+        dir: "1",
+        id: "160.2"
+    },
+    {
+        eng: "bolile lekaru",
+        hin: "बोलिले लेकरू",
+        dir: "1",
+        id: "160.3"
+    },
+    {
+        eng: "jhale samadhana",
+        hin: "झाले समाधान",
+        dir: "1",
+        id: "160.4"
+    },
+    {
+        eng: "karuni arati, chakrapani ovaliti",
+        hin: "करूनी आरती, चक्रपाणी ओवाळिती",
+        dir: "1",
+        id: "160.5"
+    },
+    {
+        eng: "arati panduranggachi",
+        hin: "आरती पांडुरंगाची",
+        dir: "1",
+        id: "161.1"
+    },
+    {
+        eng: "arati gurudattachi",
+        hin: "आरती गुरूदत्ताची",
+        dir: "1",
+        id: "161.2"
+    },
+    {
+        eng: "arati j~naneshvarachi",
+        hin: "आरती ज्ञानेश्वराची",
+        dir: "1",
+        id: "162.1"
+    },
+    {
+        eng: "arati ekanathachi",
+        hin: "आरती एकनाथाची",
+        dir: "1",
+        id: "162.2"
+    },
+    {
+        eng: "arati tukaramachi",
+        hin: "आरती तुकारामाची",
+        dir: "1",
+        id: "162.3"
+    },
+    {
+        eng: "|| pradakshina ||",
+        hin: "।। प्रदक्षिणा ।।",
+        dir: "1",
+        id: "163.1"
+    },
+    {
+        eng: "prarthana - hechi vhavi majhi asa",
+        hin: "प्रार्थना - हेचि व्हावी माझी आस",
+        dir: "1",
+        id: "163.2"
+    },
+    {
+        eng: "prasadacha abhangga",
+        hin: "प्रसादाचा अभंग",
+        dir: "1",
+        id: "164.1"
+    },
+    {
+        eng: "shloka - sada sarvada yoga tujha ghadava",
+        hin: "श्लोक - सदा सर्वदा योग तुझा घडावा",
+        dir: "1",
+        id: "165.1"
     }
 ];
 
