@@ -1764,7 +1764,7 @@
         id: "159.1"
     },
     {
-        eng: "krripalu sajjana tumhi santajana",
+        eng: "kripalu sajjana tumhi santajana krupalu",
         hin: "कृपाळू सज्जन तुम्ही संतजन",
         dir: "1",
         id: "159.2"
