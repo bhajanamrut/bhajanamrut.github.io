@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - "bhajans/1/*.txt"   # trigger only when new text files are added
+  workflow_dispatch: {}
 
 jobs:
   update-index:
