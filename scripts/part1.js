@@ -1768,6 +1768,18 @@
         hin: "कृपाळू सज्जन तुम्ही संतजन",
         dir: "1",
         id: "159.2"
+    },
+    {
+        eng: "tumhi santa mayabapa",
+        hin: "तुम्ही संत मायबाप",
+        dir: "1",
+        id: "159.3"
+    },
+    {
+        eng: "santa krripa jhali",
+        hin: "संत कृपा झाली",
+        dir: "1",
+        id: "160.1"
     }
 ];
 
