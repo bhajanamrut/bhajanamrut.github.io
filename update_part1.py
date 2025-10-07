@@ -15,7 +15,7 @@ def load_index():
         content = f.read()
 
     # Extract array content between [ and ]
-    match = re.search(r"var p3\s*=\s*(\[[\s\S]*?\]);", content)
+    match = re.search(r"var p1\s*=\s*(\[[\s\S]*?\]);", content)
     if not match:
         raise ValueError("Could not parse part1.js")
 
