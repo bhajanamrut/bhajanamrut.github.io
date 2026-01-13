@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parayan Registrations Management </title>
+</head>
+<style>
+    .item {
+        padding: 10px 0;
+        font-size: large;
+    }
+    body {
+        text-align: center;
+    }
+    html, body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .sb-container {
+        flex-shrink: 0; /* Prevent the image container from shrinking */
+        display: flex;
+        justify-content: center; /* Horizontally center the image */
+        align-items: center; /* Vertically center the image */
+        padding: 5px 10px; /* Padding around the image */
+        background-color: #ffffff; /* Example background for the image container */
+    }
+
+    .content {
+        flex-grow: 1;
+        overflow-y: auto; /* Enable vertical scrolling */
+        padding: 5px; /* Example padding */
+        box-sizing: border-box; /* Include padding in height calculation */
+    }
+
+    .content div {
+        margin-bottom: 20px; /* Space between content div elements */
+        padding-left: 5px; /* Example padding for inner divs */
+        background-color: #ffffff; /* Example background for inner divs */
+    }
+    .warning {
+        color: red;
+        font-size: 18px;
+        float: left;
+        padding: 0px 10px;
+    }
+    .success {
+        color: green;
+        font-size: 18px;
+        float: left;
+        padding: 0px 10px;
+    }
+    .filter-box {
+        float: left;
+        display: inline;
+        border-radius: 6px;
+        padding: 4px;
+        margin: 0px 2px;
+        border: 1px solid gray;
+    }
+
+    .dropdown {
+            position: relative;
+            margin-top: 8px;
+            float: left;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
+            z-index: 1;
+            margin: 25px;
+            max-height: 50vh; /* Make the dropdown max-height 50% of the viewport */
+            overflow-y: auto; /* Enable vertical scroll if content exceeds max-height */
+        }
+
+        .dropdown-content label {
+            display: flex;
+            padding: 8px;
+            cursor: pointer;
+            
+        }
+
+        .dropdown-content label:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown.show .dropdown-content {
+            display: block;
+        }
+
+        #selectedItems {
+            margin-top: 10px;
+        }
+
+        .disabled-red {
+            color: red;          /* Optional: Change color to indicate disabled state */
+            text-decoration: none;
+            text-decoration: line-through;
+        }
+        .disabled-grey {
+            color: gray;          /* Optional: Change color to indicate disabled state */
+            text-decoration: none;
+            text-decoration: line-through;
+        }
+</style>
+
+<body>
+    <div class="container">
+        <span style="font-size: 26px; padding: 10px">पारायण नोंदणी व्यवस्थापन </span>
+        <div style="font-size: 20px; padding: 10px">
+            <span>नोंदणी संख्या: </span><span id="regCount">...</span><a href="#" style="padding: 10px;" onclick="showSummary(event)">  विवरण </a>
+        </div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfgjBgdoac8x4Wmh2-t956KQc7ew3VsgNblQks2f-E3GDstNg/viewform" target="_blank" style="padding: 10px; padding-bottom: 20px;">नवीन नोंदणी करायला इथे क्लिक करा ... </a>
+        
+        <div style="padding: 0px 10px;">
+
+            <div class="filter-box">
+                <span>कुर्सी</span><br>
+                <label><input type="checkbox" name="chair" value="Yes" onchange="delayedSearch(this)" checked>हो</label>
+                <label><input type="checkbox" name="chair" value="No"  onchange="delayedSearch(this)" checked>नको</label>
+            </div>
+            <div class="filter-box">
+                <span>पोथी</span><br>
+                <label><input type="checkbox" name="pothi" value="Yes" onchange="delayedSearch(this)" checked>हो</label>
+                <label><input type="checkbox" name="pothi" value="No"  onchange="delayedSearch(this)" checked>नको</label>
+                
+            </div>
+            <div class="filter-box">
+                <span>राहणारे</span><br>
+                <label><input type="checkbox" name="region" value="Hyd" onchange="delayedSearch(this)" checked>हैद्रा.</label>
+                <label><input type="checkbox" name="region" value="MH"  onchange="delayedSearch(this)" checked>महा.</label>
+                <label><input type="checkbox" name="region" value="Other"  onchange="delayedSearch(this)" checked>इ.</label>
+                
+            </div>
+        </div>
+        <div class="dropdown" id="checkboxDropdown">
+            <button onclick="toggleDropdown()" style="float: left; margin: 4px 12px;">Filter by Area</button>
+            <div class="dropdown-content" id="dropdownContent"></div>
+            <div><a href="#" style="padding: 5px;float: left;margin: 0px 10px;" onclick="copy(event)" id="copymsg"></a></div>
+        </div>
+        
+
+        <div class="sb-container">
+            <input id="searchBox" type="search" placeholder="Search by name or phone number ..." style="width: 100%; height: 32px;font-size: 20px; margin: 5px;">
+            <button id="searchBtn" style="position: absolute;width: 16%;height: 38px;right: 0px; display: none;">                    
+            </button>
+        </div>
+        <div class="content">				
+            <!--<div id="BhajanList" style="overflow: scroll;height: calc(100% - 170px);position: fixed;width: calc(100% - 20px);margin: 20px 10px 0 10px;"></div>-->
+            <div id="RegList"></div>
+        </div>
+        
+    </div>
+    <script>
+        
+        var dataset;
+        var filteredset;
+        var timeout;
+        var timeout;
+        var evtdata;
+        var cancel = false;
+        var busy = false;
+        var summary;
+
+        const sittingSections = [ 
+            
+            //sitting
+            { color: '01557a', name: 'भक्त - बंकटलाल', capacity: 100, currentAllocation: 0, type: 'nochair' }, //blue-1
+            { color: '23a336', name: 'भक्त - पितांबर', capacity: 100, currentAllocation: 0, type: 'nochair' }, //light green-2
+            { color: 'dc84ae', name: 'भक्त - बाळाभाऊ', capacity: 100, currentAllocation: 0, type: 'nochair' }, //light pink-3
+            { color: 'e7ae9d', name: 'भक्त - पटवर्धन', capacity: 100, currentAllocation: 0, type: 'chair' }, //copper-4
+            { color: '2596be', name: 'भक्त - भागूबाई', capacity: 100, currentAllocation: 0, type: 'nochair' }, //blue-5
+            { color: '873e23', name: 'भक्त - नंदू बाई', capacity: 100, currentAllocation: 0, type: 'nochair' }, //brown-6
+            { color: 'abdbe3', name: 'भक्त - भुलाबाई', capacity: 100, currentAllocation: 0, type: 'nochair' }, //light blue-7
+            { color: 'e28743', name: 'भक्त - अनुसयाबाई', capacity: 100, currentAllocation: 0, type: 'nochair' }, //orange-8
+            { color: 'cecece', name: 'भक्त - गुजाबाई', capacity: 100, currentAllocation: 0, type: 'nochair' }, //maroon-9
+            { color: '57e792', name: 'भक्त - बनाबाई', capacity: 100, currentAllocation: 0, type: 'nochair' }, //firozee-10
+            
+            //chair
+            { color: '7b060c', name: 'भक्त - भास्कर पाटील', capacity: 100, currentAllocation: 0, type: 'nochair' }, //maroon-11
+            { color: 'd97d02', name: 'भक्त - नारायण', capacity: 100, currentAllocation: 0, type: 'chair' }, //dark yellow-12
+            { color: '6a3c58', name: 'भक्त - पुंडलिक', capacity: 100, currentAllocation: 0, type: 'chair' }, //purple-13
+            { color: '007400', name: 'भक्त - हरी पाटील', capacity: 100, currentAllocation: 0, type: 'chair' }, //dark green-14
+            { color: 'fa51ac', name: 'भक्त - बापुना काळे', capacity: 100, currentAllocation: 0, type: 'chair' }, //Dark pink-15
+            { color: '37080e', name: 'भक्त - झ्याम सिंग', capacity: 100, currentAllocation: 0, type: 'chair' }, // Dark maroon-16
+            { color: '37080e', name: 'भक्त - त्रिंबक कंवर', capacity: 100, currentAllocation: 0, type: 'chair' }, //grey-17
+            { color: 'eae3c6', name: 'भक्त - रामचंद्र पाटील', capacity: 100, currentAllocation: 0, type: 'chair' }, //Red-18
+            { color: 'be1b6a', name: 'भक्त - चंद्रभागाबाई', capacity: 100, currentAllocation: 0, type: 'chair' }, //golden-19
+            { color: '632fad', name: 'भक्त - बायजाबाई', capacity: 100, currentAllocation: 0, type: 'chair' }, //violet-20
+            { color: 'f6a905', name: 'भक्त - बाळकृष्ण बुवा', capacity: 100, currentAllocation: 0, type: 'chair' }, //copper-21
+            { color: 'ffffff', name: 'भक्त - कोलटकर', capacity: 100, currentAllocation: 0, type: 'chair' }, //white-22
+            { color: 'f6a905', name: 'संत गजानन महाराज', capacity: '21000', currentAllocation: 0, type: 'chair' }, //copper-23
+        ];
+        const propmap = {
+                'NAME': 0,
+                'ADDRESS': 1,
+                'REGION': 2,
+                'GENDER': 3,
+                'AGE': 4,
+                'NEEDCHAIR': 5,
+                'MOBILENO': 6,
+                'NEEDPOTHI': 7,
+                'STATUS': 8,
+                'EDITURL': 9,
+                'INCOMPLETE': 10,
+                'REGID': 11,
+                'ENGNAME': 12,
+                'SECTION': 13
+            };
+
+            //const options = ["All", "Option 1", "Option 2", "Option 3", "Option 4"];
+
+            function createAreaFilterDropdown() {
+            const dropdownContent = document.getElementById('dropdownContent');
+
+            // Create "All" option first
+            const allLabel = document.createElement('label');
+            const allCheckbox = document.createElement('input');
+            allCheckbox.type = 'checkbox';
+            allCheckbox.id = 'option-all';
+            allCheckbox.checked = true;
+
+            allCheckbox.addEventListener('change', toggleAll);
+
+            allLabel.appendChild(allCheckbox);
+            allLabel.appendChild(document.createTextNode('All'));
+            dropdownContent.appendChild(allLabel);
+
+            // Create options from JSON object
+            Object.keys(summary.Area).sort().forEach((key, index) => {
+                const label = document.createElement('label');
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.value = key.trim();
+                checkbox.id = `option-${index + 1}`;
+                checkbox.checked = true;
+
+                // Add event listener for changes
+                checkbox.addEventListener('change', updateSelectedItems);
+
+                // Display key and value in format: key (value)
+                label.appendChild(checkbox);
+                label.appendChild(document.createTextNode(`${key} (${summary.Area[key]})`));
+
+                dropdownContent.appendChild(label);
+            });
+            }
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById('checkboxDropdown');
+            dropdown.classList.toggle('show');
+        }
+
+        function toggleAll() {
+            const allCheckbox = document.getElementById('option-all'); // "All" checkbox
+            const checkboxes = document.querySelectorAll('#dropdownContent input[type="checkbox"]:not(#option-all)');
+
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = allCheckbox.checked;
+            });
+
+            updateSelectedItems();
+        }
+
+        function updateSelectedItems() {
+            const allCheckbox = document.getElementById('option-all'); // "All" checkbox
+            const checkboxes = document.querySelectorAll('#dropdownContent input[type="checkbox"]:not(#option-all)');
+            const selected = [];
+
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    selected.push(`${checkbox.value} (${summary.Area[checkbox.value]})`);
+                }
+            });
+
+            // Update the state of the "All" checkbox
+            allCheckbox.checked = selected.length === checkboxes.length;
+
+            //const selectedItemsDiv = document.getElementById('selectedItems');
+            //selectedItemsDiv.innerHTML = selected.length > 0 ? `Selected: ${selected.join(', ')}` : 'Selected: None';
+            delayedSearch();
+            
+        }
+
+        // Close dropdown when clicking outside of it
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('checkboxDropdown');
+            if (!dropdown.contains(event.target)) {
+                dropdown.classList.remove('show');
+            }
+        });
+
+        function onLoad() {
+            searchBox = document.getElementById('searchBox');
+            //listElement = document.getElementById('DataList');
+            searchBox.addEventListener('input', delayedSearch, false);
+            
+            fetchAndUpdate();
+        }
+
+        window.addEventListener('load', onLoad, false);
+
+        function getData(obj, prop){
+            if(typeof obj === 'number'){
+                return dataset[obj][prop];
+            }
+            else {
+                return obj[prop];
+            }
+        }
+        
+        function setData(index, prop, val){
+            dataset[index][prop] = val;
+        }
+
+        function getPothiString(np) {
+            return (np && np.toLowerCase() === 'yes')?'पाहिजे':'स्वतःची आहे'; 
+		}
+
+        function getBaithakString(nc) {
+            return (nc && nc.toLowerCase() === 'yes')?'खुर्चीवर बसुन':'खाली बसून';     
+        }
+
+	function getRecordString(item){
+            return `${getData(item, propmap.REGID)},${getData(item, propmap.NAME)},${getPothiString(getData(item, propmap.NEEDPOTHI))},${getData(item, propmap.MOBILENO)},${getBaithakString(getData(item, propmap.NEEDCHAIR))},${getSectionName(getData(item, propmap.SECTION))},${getData(item, propmap.STATUS)}\n`;
+        }
+
+        function copy_old(event) {
+            event.preventDefault(); // Prevent default navigation
+            //alert(filteredset.length);
+            var records = "";
+            filteredset.forEach(element => {
+
+                records += getRecordString(element);
+            });
+
+            console.log(records);
+
+            navigator.clipboard.writeText(records).then(() => {
+                alert("Copied to clipboard!");
+            }).catch(err => {
+                alert("Failed to copy text: ", err);
+            });
+        }
+
+        function copy(event) {
+            event.preventDefault(); // Prevent default navigation
+            
+            var records = `RegNo,Name, Pothi,MobNo,SittingType,Section,Status\n`;
+            filteredset.forEach(element => {
+
+                records += getRecordString(element);
+            });
+
+            console.log(records);
+
+            navigator.clipboard.writeText(records).then(() => {
+                alert("Copied to clipboard!");
+            }).catch(err => {
+                alert("Failed to copy text: ", err);
+            });
+        }
+        	    
+        function showSummary(event) {
+            event.preventDefault(); // Prevent default navigation
+            generateSummary();
+            const summaryStr = `    
+    पुरुष: ${summary.Gender.M}, महिला: ${summary.Gender.F} 
+
+    बैठकी -
+        कुर्सी वर: ${summary.NeedChair.Yes} 
+        खाली बसून: ${summary.NeedChair.No},      
+
+    पोथी - 
+        पाहिजे: ${summary.NeedPothi.Yes}, 
+        स्वताची आहे: ${summary.NeedPothi.No}, 
+        unknown : ${summary.NeedPothi[""]} 
+
+    राहणारे - 
+        हैद्राबाद: ${summary.Region.Hyd}, 
+        महाराष्ट्र: ${summary.Region.MH}, 
+        इतर : ${summary.Region.Other},
+        unknown : ${summary.Region[""]}      
+            `;
+            alert(summaryStr);
+        }
+
+        function generateSummary() {
+            const sm = dataset.reduce((acc, obj) => {
+                // Count occurrences of property1
+                const needChair = getData(obj, propmap.NEEDCHAIR);
+                acc.NeedChair[needChair] = (acc.NeedChair[needChair] || 0) + 1;
+
+                // Count occurrences of property2
+                const needPothi = getData(obj, propmap.NEEDPOTHI);
+                acc.NeedPothi[needPothi] = (acc.NeedPothi[needPothi] || 0) + 1;
+
+                const gender = getData(obj, propmap.GENDER);
+                acc.Gender[gender] = (acc.Gender[gender] || 0) + 1;
+
+                const region = getData(obj, propmap.REGION);
+                acc.Region[region] = (acc.Region[region] || 0) + 1;
+
+                const area = getData(obj, propmap.ADDRESS);
+                acc.Area[area.trim()] = (acc.Area[area.trim()] || 0) + 1;
+
+                return acc;
+                }, { NeedChair: {}, NeedPothi: {}, Gender: {}, Region: {}, Area: {} }); 
+
+                summary = sm;
+                
+            }
+
+        function fetchAndUpdate(){
+            const sheetId = '1sVZ1d_yMRcu3STWN_W1CV2CCqj5B24McPH76jAb0kjQ'; // Replace with your actual sheet ID
+            const sheetName = 's1!C2:L2500'; // Replace with the name of your sheet
+            const apiKey = 'AIzaSyBTkT9f1ceMamAPhKhpMkUItgVIsH4RJuU'; // Optional, can be omitted if not using an API key
+
+            const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${sheetName}?key=${apiKey}`;
+            //const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${sheetName}`;
+            console.log(url);
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Sheet Data:', data.values); // Log the values in the sheet
+                    dataset = data.values
+                    dataset = massageData(data.values);
+                    filteredset = dataset;
+                    document.getElementById('regCount').innerHTML = data.values.length;
+
+                    generateSummary();
+                    createAreaFilterDropdown();
+                    updateList();
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+        }
+
+        function massageData(data){
+            for(var i=0; i<data.length; i++) {
+                const regid = i+1;
+                setData(i, propmap.REGID, String(regid).padStart(4, '0'));
+                setData(i, propmap.SECTION, assignSittingSection(regid, getData(i, propmap.NEEDCHAIR)))
+                if(getData(i, propmap.REGION) == '' //region
+                    || getData(i, propmap.GENDER) == '' //gender
+                    || getData(i, propmap.NEEDCHAIR) == '' //need chair 
+                    || getData(i, propmap.MOBILENO) == '' //mobile
+                    || getData(i, propmap.NEEDPOTHI) == '' //need pothi
+                ) {
+                    setData(i, propmap.INCOMPLETE, true); //isIncomplete
+                }
+
+            }
+            return data;
+        }
+
+        function getStatusClass(item){
+            var status = getData(item, propmap.STATUS);
+            var className = "";
+            if(status){
+                if(status === "Duplicate") className = "disabled-grey";
+                if(status === "Not attending") className = "disabled-red";
+            }
+            return className;
+        }
+
+        function getCardVisibility(item){
+            var status = getData(item, propmap.STATUS);
+            if(getData(item, propmap.INCOMPLETE) || status === "Duplicate" || status === "Not attending")
+            {
+                return 'none';
+            }
+            else {
+                return 'inline';    
+            }
+        }
+
+        function updateList(){
+            if(filteredset){
+                var dataset = filteredset;
+                const listElement = document.getElementById('RegList');
+                //const markup = `${filteredBhajans.map(regData => `<div class="item"><a href="./bhajan.html?b=${bhajan.dir}-${bhajan.id}"><span style="float: left;">${bhajan.hin}</span><span style="float: right;">${bhajan.dir} - ${bhajan.id.split('.')[0] }</span></a></div>`).join('')}`;
+                //${reg[9]?'<span class="warning">&#9888</span>':'<span class="success">&#10003</span>'} 
+                const markup = `${dataset.map(reg => `<div class="item" > 
+                    
+                    <span style="float: left;" class="${getStatusClass(reg)}">
+                        <a href='${getData(reg, propmap.EDITURL)}' target="_blank" class="${getStatusClass(reg)}">${getData(reg, propmap.NAME)}</a>
+                        &nbsp;
+                        <a href='./idcard24.html?name=${getData(reg, propmap.NAME)}&regno=${getData(reg, propmap.REGID)}&needchair=${getData(reg, propmap.NEEDCHAIR)}&needpothi=${getData(reg, propmap.NEEDPOTHI)}&sectionName=${getSectionName(getData(reg, propmap.SECTION))}&sectionClr=${getSectionColor(getData(reg, propmap.SECTION))}&phno=91${getData(reg, propmap.MOBILENO)}' style="display: ${getCardVisibility(reg)}; text-decoration: none;">&#128179;</a>
+                        
+                        </span>
+                        <span class="warning" style="display: ${getData(reg, propmap.INCOMPLETE)?'inline':'none'};">&#9888</span>
+                    <span style="float: right;"><a href='https://wa.me/91${getData(reg, propmap.MOBILENO)}'>${getData(reg, propmap.MOBILENO)}</a></span></div>`
+                ).join('')}`;
+                listElement.innerHTML = markup;
+            }
+        }
+
+        function getSectionName(index) {
+            return sittingSections[index].name;
+        }
+
+        function getSectionColor(index) {
+            return sittingSections[index].color;
+        }
+
+        function assignSittingSection(regid, nc){
+            var needChair = nc && nc.trim().toLowerCase() === "yes";
+            var secionIndex = 22;
+            if(!needChair) {
+                for(var i=0; i<10; i++){
+                    if(sittingSections[i].currentAllocation < sittingSections[i].capacity){
+                        secionIndex = i;
+                        break; 
+                    }
+                }
+            }
+            else{
+                for(var i=10; i<22; i++){
+                    if(sittingSections[i].currentAllocation < sittingSections[i].capacity){
+                        secionIndex = i;
+                        break;
+                    }
+                }
+            }
+            sittingSections[secionIndex].currentAllocation = sittingSections[secionIndex].currentAllocation + 1;    
+            return secionIndex;
+        }
+
+        /*
+        style="display: inline; text-decoration: none;"
+        */
+
+        var delayedSearch = (evt) => {
+        cancel = true;
+        clearTimeout(timeout);
+        timeout = 0;
+        evtdata = evt;
+        //timeouts.push(setTimeout(onSearch, 1));
+        var startSearch = () => {
+            if(!busy){
+                clearTimeout(timeout);
+                onSearch();
+            }
+            else{ 
+                timeout = setTimeout(startSearch, 250);
+            }
+        }
+
+            startSearch();
+        }
+
+        var onSearch = async(evt) => {
+        cancel = false;
+        busy = true;
+        evt = evtdata;
+        var searchKey = evt?.target?.value;
+        /*if (!searchKey || searchKey === '') {
+            filteredset = dataset;
+            updateList();
+        }
+        else {
+            filteredset = [];
+
+            if(!cancel && filteredset.length == 0){
+                filteredset = await  getFilterPromise( () => filterList(searchKey, propmap.MOBILENO, dataset));
+            }
+            if(!cancel){
+                updateList();
+            }
+        }*/
+        filteredset = [];
+
+        if(!cancel && filteredset.length == 0){
+            filteredset = await  getFilterPromise( () => filterList(searchKey, propmap.MOBILENO, dataset));
+        }
+        if(!cancel && filteredset.length == 0){
+            filteredset = await  getFilterPromise( () => filterList(searchKey, propmap.NAME, dataset));
+        }
+        if(!cancel){
+            updateList();
+        }
+
+        busy = false;
+    }
+
+    var getFilterPromise = (filterFunc) => {
+        return new Promise(resolve => {
+            setTimeout(async() => {
+                if (cancel) {
+                    resolve([]);
+                } else {
+                    resolve(filterFunc());
+                }
+            }, 1);
+        });
+    }
+
+
+    var filterList = (searchKey, prop, list) => {
+        //var searchKeyLowerCase = searchKey.toLowerCase();
+        //var filteredList =  list.filter(item => item[prop].includes(searchKey));
+        const chairOptions = Array.from(document.querySelectorAll('input[name="chair"]:checked')).map(cb => cb.value);
+        const pothiOptions = Array.from(document.querySelectorAll('input[name="pothi"]:checked')).map(cb => cb.value);
+        const regionOptions = Array.from(document.querySelectorAll('input[name="region"]:checked')).map(cb => cb.value);
+        const areaOptions = Array.from(document.querySelectorAll('#dropdownContent input[type="checkbox"]:checked:not(#option-all)')).map(cb => cb.value);
+        
+
+        var filteredList = list.filter(item => {
+                    var include = true;
+                    include = include && (searchKey && searchKey.length>1)? item[prop].includes(searchKey):true;
+                    include = include && chairOptions.includes(item[propmap.NEEDCHAIR]) ;
+                    include = include && pothiOptions.includes(item[propmap.NEEDPOTHI]) ;
+                    include = include && regionOptions.includes(item[propmap.REGION]) ;
+                    include = include && areaOptions.includes(item[propmap.ADDRESS].trim()) ;
+                    //&& selectedCategories.includes(item.category)
+                    return include;
+                }
+            );
+        document.getElementById('copymsg').innerHTML = `Copy ${filteredList.length} results`;
+        return filteredList;
+    }
+        
+    </script>
+</body>
+</html>
