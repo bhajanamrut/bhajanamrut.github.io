@@ -1,0 +1,16 @@
+[
+    { "path": "Adhyay-00.html", "name": "मंगलाचरण" },
+    { "path": "Adhyay-01.01.html", "name": "अध्याय १.१" },
+    { "path": "Adhyay-01.02.html", "name": "अध्याय १.२" },
+    { "path": "Adhyay-01.03.html", "name": "अध्याय १.३" },
+
+    { "path": "Adhyay-02.01.html", "name": "अध्याय २.१" },
+    { "path": "Adhyay-02.02.html", "name": "अध्याय २.२" },
+    { "path": "Adhyay-02.03.html", "name": "अध्याय २.३" },
+    
+    { "path": "Adhyay-04.01.html", "name": "अध्याय ४.१" },
+    { "path": "Adhyay-04.02.html", "name": "अध्याय ४.२" },
+    { "path": "Adhyay-04.03.html", "name": "अध्याय ४.३" },
+    { "path": "Adhyay-04.04.html", "name": "अध्याय ४.४" }
+   
+]
