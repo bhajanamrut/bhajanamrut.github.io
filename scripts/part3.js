@@ -186,8 +186,8 @@ var p3 = [
         id: "31"
     },
     {
-        eng: "| manika lokapalaka |",
-        hin: "। माणिका लोकपालका ।",
+        eng: "manika lokapalaka",
+        hin: "माणिका लोकपालका",
         dir: "3",
         id: "32"
     }
