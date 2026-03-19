@@ -11667,5 +11667,29 @@ indexData={
   ],
   "milega": [
     397
+  ],
+  "pas": [
+    398
+  ],
+  "pasa": [
+    398
+  ],
+  "pasay": [
+    398
+  ],
+  "pasaya": [
+    398
+  ],
+  "pasayad": [
+    398
+  ],
+  "pasayada": [
+    398
+  ],
+  "pasayadan": [
+    398
+  ],
+  "pasayadana": [
+    398
   ]
 }
