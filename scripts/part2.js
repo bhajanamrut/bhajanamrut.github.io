@@ -346,6 +346,12 @@ var p2 = [
         hin: "अंबा आली ही नाचत",
         dir: "2",
         id: "58"
+    },
+    {
+        eng: "bhakta pundalikasathi ubha rahila vitevari",
+        hin: "भक्त पुंडलिकासाठी उभा राहिला विटेवरी",
+        dir: "2",
+        id: "59"
     }
 ];
 
