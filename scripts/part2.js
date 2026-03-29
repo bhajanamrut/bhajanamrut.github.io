@@ -352,6 +352,12 @@ var p2 = [
         hin: "भक्त पुंडलिकासाठी उभा राहिला विटेवरी",
         dir: "2",
         id: "59"
+    },
+    {
+        eng: "mala pandharila javasa vatala ga",
+        hin: "मला पंढरीला जावस वाटल ग",
+        dir: "2",
+        id: "60"
     }
 ];
 
