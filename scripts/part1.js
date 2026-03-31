@@ -762,8 +762,8 @@
         id: "58.2"
     },
     {
-        eng: "rastyavar he mandir",
-        hin: "रस्त्यावर हे मंदीर",
+        eng: "meru shikhari mandir",
+        hin: "मेरू शिखरी मंदिर",
         dir: "1",
         id: "59.1"
     },
