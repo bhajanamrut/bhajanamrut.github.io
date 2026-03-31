@@ -4355,6 +4355,7 @@ indexData={
   "shi": [
     96,
     124,
+    127,
     131,
     136,
     147,
@@ -5394,25 +5395,28 @@ indexData={
   "samartha": [
     126
   ],
-  "ras": [
+  "mer": [
+    127,
+    190,
+    313,
+    377
+  ],
+  "meru": [
     127
   ],
-  "rast": [
+  "shik": [
     127
   ],
-  "rasty": [
+  "shikh": [
     127
   ],
-  "rastya": [
+  "shikha": [
     127
   ],
-  "rastyav": [
+  "shikhar": [
     127
   ],
-  "rastyava": [
-    127
-  ],
-  "rastyavar": [
+  "shikhari": [
     127
   ],
   "kap": [
@@ -6978,11 +6982,6 @@ indexData={
   ],
   "darshanachi": [
     189
-  ],
-  "mer": [
-    190,
-    313,
-    377
   ],
   "meri": [
     190
