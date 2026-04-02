@@ -358,6 +358,12 @@ var p2 = [
         hin: "मला पंढरीला जावस वाटल ग",
         dir: "2",
         id: "60"
+    },
+    {
+        eng: "dattache veda maja lagale",
+        hin: "दत्ताचे वेड मज लागले",
+        dir: "2",
+        id: "61"
     }
 ];
 
