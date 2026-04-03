@@ -364,6 +364,12 @@ var p2 = [
         hin: "दत्ताचे वेड मज लागले",
         dir: "2",
         id: "61"
+    },
+    {
+        eng: "smara gajananam mati vikasinam",
+        hin: "स्मर गजाननं मति विकासिनं",
+        dir: "2",
+        id: "62"
     }
 ];
 
