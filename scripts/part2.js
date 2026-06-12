@@ -376,6 +376,12 @@ var p2 = [
         hin: "वो काला एक बांसुरी वाला",
         dir: "2",
         id: "63"
+    },
+    {
+        eng: "dvarapalom kanhaiya se kaha do",
+        hin: "द्वारपालों कन्हैया से कह दो",
+        dir: "2",
+        id: "64"
     }
 ];
 
