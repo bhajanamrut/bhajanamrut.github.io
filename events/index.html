@@ -334,7 +334,7 @@
                 shareBtn.addEventListener("click", (e) => {
                     e.stopPropagation(); // prevent bubbling from interfering
                     console.log("Share button clicked for:", evt[propmap.OCCASION]);
-                    captureAndShare(card, evt);
+                    captureAndShareAdv(card, evt);
                 });
 
                 card.appendChild(shareBtn);
@@ -372,6 +372,46 @@
             if (targetCard) {
                 targetCard.scrollIntoView({ behavior: "smooth", block: "center" });
             }
+        }
+
+        function captureAndShareAdv(card, evt) {
+            // 1. Get the device pixel ratio, or default to 2 for upscaling
+            // A scale of 2x or 3x works best for crisp text without making the file massive
+            const scale = window.devicePixelRatio > 1 ? window.devicePixelRatio : 4;
+
+            // Convert table to canvas with configuration options
+            html2canvas(card, {
+                scale: scale, // <-- Force higher resolution/upscaling
+                useCORS: true, // <-- Ensures external images load correctly without tainting canvas
+                logging: false,
+                ignoreElements: (element) => {
+                    return element.classList.contains("share-btn");
+                }
+            }).then(canvas => {
+                // 2. Enhance image smoothing on the generated canvas context
+                const ctx = canvas.getContext('2d');
+                ctx.imageSmoothingEnabled = true;
+                ctx.imageSmoothingQuality = 'high';
+
+                // Convert canvas to a data URL for the image (PNG keeps text crisp, or use image/jpeg with 0.95 quality)
+                let imgData = canvas.toDataURL('image/png');
+
+                // Create an anchor element to trigger the download
+                let a = document.createElement('a');
+                a.href = imgData;
+                a.download = `भजन संध्या #${evt[propmap.NUM]} - ${new Date(evt[propmap.DATE]).toDateString()}.png`;
+
+                // Trigger the download by simulating a click
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+
+                let encodedMessage = buildWhatsAppMessage(evt);
+                let whatsappLink = `https://wa.me/?text=${encodedMessage}`;
+                
+                // Open WhatsApp share link
+                window.open(whatsappLink, '_blank');
+            });
         }
 
 
