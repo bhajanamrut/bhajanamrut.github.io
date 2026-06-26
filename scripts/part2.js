@@ -370,6 +370,30 @@ var p2 = [
         hin: "स्मर गजाननं मति विकासिनं",
         dir: "2",
         id: "62"
+    },
+    {
+        eng: "vo kala eka bamsuri vala",
+        hin: "वो काला एक बांसुरी वाला",
+        dir: "2",
+        id: "63"
+    },
+    {
+        eng: "dvarapalom kanhaiya se kaha do",
+        hin: "द्वारपालों कन्हैया से कह दो",
+        dir: "2",
+        id: "64"
+    },
+    {
+        eng: "sukha ke saba sathi",
+        hin: "सुख के सब साथी",
+        dir: "2",
+        id: "65"
+    },
+    {
+        eng: "*damaru vale baba*",
+        hin: "*डमरू वाले बाबा*",
+        dir: "2",
+        id: "66"
     }
 ];
 
