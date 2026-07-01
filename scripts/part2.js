@@ -394,6 +394,12 @@ var p2 = [
         hin: "*डमरू वाले बाबा*",
         dir: "2",
         id: "66"
+    },
+    {
+        eng: "gajananachya charani",
+        hin: "गजाननाच्या चरणी",
+        dir: "2",
+        id: "67"
     }
 ];
 
