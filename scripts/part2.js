@@ -400,6 +400,12 @@ var p2 = [
         hin: "गजाननाच्या चरणी",
         dir: "2",
         id: "67"
+    },
+    {
+        eng: "deha viththala viththala jhala",
+        hin: "देह विठ्ठल विठ्ठल झाला",
+        dir: "2",
+        id: "68"
     }
 ];
 
