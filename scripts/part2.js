@@ -406,6 +406,12 @@ var p2 = [
         hin: "देह विठ्ठल विठ्ठल झाला",
         dir: "2",
         id: "68"
+    },
+    {
+        eng: "bhajana kari mahadeva",
+        hin: "भजन करी महादेव",
+        dir: "2",
+        id: "69"
     }
 ];
 
