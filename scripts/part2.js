@@ -412,6 +412,12 @@ var p2 = [
         hin: "भजन करी महादेव",
         dir: "2",
         id: "69"
+    },
+    {
+        eng: "nija charanom se prabhu ne",
+        hin: "निज चरणों से प्रभु ने",
+        dir: "2",
+        id: "70"
     }
 ];
 
