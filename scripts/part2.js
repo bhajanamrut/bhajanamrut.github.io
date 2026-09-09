@@ -424,6 +424,12 @@ var p2 = [
         hin: "स्वप्नात आले माझ्या",
         dir: "2",
         id: "71"
+    },
+    {
+        eng: "lakhkha padala prakasha divatya mashalicha !",
+        hin: "लख्ख पडला प्रकाश दिवट्या मशालीचा !",
+        dir: "2",
+        id: "72"
     }
 ];
 
