@@ -430,6 +430,24 @@ var p2 = [
         hin: "लख्ख पडला प्रकाश दिवट्या मशालीचा !",
         dir: "2",
         id: "72"
+    },
+    {
+        eng: "ambela sajavala",
+        hin: "अंबेला सजवल",
+        dir: "2",
+        id: "73"
+    },
+    {
+        eng: "chandana chandana jhali rata",
+        hin: "चांदण चांदण झाली रात",
+        dir: "2",
+        id: "74"
+    },
+    {
+        eng: "chanda mala lagala",
+        hin: "छंद मला लागला",
+        dir: "2",
+        id: "75"
     }
 ];
 
