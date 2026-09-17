@@ -448,6 +448,12 @@ var p2 = [
         hin: "छंद मला लागला",
         dir: "2",
         id: "75"
+    },
+    {
+        eng: "he nama re sabase ba.da",
+        hin: "हे नाम रे सबसे बड़ा",
+        dir: "2",
+        id: "76"
     }
 ];
 
