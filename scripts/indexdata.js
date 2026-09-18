@@ -11631,22 +11631,19 @@ indexData={
   "ba.da": [
     385
   ],
-  "pang": [
+  "pank": [
     386
   ],
-  "pangk": [
+  "pankh": [
     386
   ],
-  "pangkh": [
+  "pankhi": [
     386
   ],
-  "pangkhi": [
+  "pankhid": [
     386
   ],
-  "pangkhid": [
-    386
-  ],
-  "pangkhida": [
+  "pankhida": [
     386
   ],
   "manik": [
