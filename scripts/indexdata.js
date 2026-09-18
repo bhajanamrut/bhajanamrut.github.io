@@ -11613,6 +11613,21 @@ indexData={
   "sajavala": [
     382
   ],
+  "son": [
+    382
+  ],
+  "sony": [
+    382
+  ],
+  "sonya": [
+    382
+  ],
+  "sonyan": [
+    382
+  ],
+  "sonyane": [
+    382
+  ],
   "lagala": [
     384
   ],
