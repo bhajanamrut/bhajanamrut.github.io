@@ -456,7 +456,7 @@ var p2 = [
         id: "76"
     },
     {
-        eng: "pangkhida o pangkhida",
+        eng: "pankhida o pankhida",
         hin: "पंखीडा ओ पंखीडा",
         dir: "2",
         id: "77"
