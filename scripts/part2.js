@@ -466,6 +466,12 @@ var p2 = [
         hin: "जय मल्हार",
         dir: "2",
         id: "78"
+    },
+    {
+        eng: "chandanam chandanam",
+        hin: "चांदणं चांदणं",
+        dir: "2",
+        id: "79"
     }
 ];
 
