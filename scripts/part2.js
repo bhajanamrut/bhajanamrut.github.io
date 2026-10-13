@@ -432,8 +432,8 @@ var p2 = [
         id: "72"
     },
     {
-        eng: "ambela sajavala sonyane",
-        hin: "अंबेला सजवल",
+        eng: "ambela sajavala sonyane nanyane",
+        hin: "सोन्याने नाण्यांने अंबेला सजवल",
         dir: "2",
         id: "73"
     },
