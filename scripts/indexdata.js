@@ -10671,6 +10671,7 @@ indexData={
   "nan": [
     329,
     362,
+    382,
     416
   ],
   "nand": [
@@ -11637,6 +11638,18 @@ indexData={
     382
   ],
   "sonyane": [
+    382
+  ],
+  "nany": [
+    382
+  ],
+  "nanya": [
+    382
+  ],
+  "nanyan": [
+    382
+  ],
+  "nanyane": [
     382
   ],
   "lagala": [
