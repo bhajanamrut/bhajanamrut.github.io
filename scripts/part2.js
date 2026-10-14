@@ -484,6 +484,12 @@ var p2 = [
         hin: "सदाशिवा महादेवा - नमो पार्वती पतये",
         dir: "2",
         id: "81"
+    },
+    {
+        eng: "savara savara ambabai, paithanicha",
+        hin: "सावर सावर अंबाबाई, पैठणीचा",
+        dir: "2",
+        id: "82"
     }
 ];
 
