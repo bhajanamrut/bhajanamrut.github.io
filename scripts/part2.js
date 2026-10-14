@@ -478,6 +478,12 @@ var p2 = [
         hin: "डोल जरा डोल",
         dir: "2",
         id: "80"
+    },
+    {
+        eng: "sadashiva mahadeva - namo parvati pataye",
+        hin: "सदाशिवा महादेवा - नमो पार्वती पतये",
+        dir: "2",
+        id: "81"
     }
 ];
 
