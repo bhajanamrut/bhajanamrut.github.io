@@ -294,7 +294,7 @@ var p2 = [
         id: "49"
     },
     {
-        eng: "vitthala viththala ye re pandhari raya",
+        eng: "vitthala pandurang viththala ye re pandhari raya",
         hin: "विठ्ठला ये रे पंढरी राया",
         dir: "2",
         id: "50"
