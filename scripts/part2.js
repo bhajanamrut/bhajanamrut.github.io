@@ -496,6 +496,12 @@ var p2 = [
         hin: "नाकी डोळी छान माऊली",
         dir: "2",
         id: "83"
+    },
+    {
+        eng: "govinda madhava stotra",
+        hin: "गोविंद माधव स्तोत्र",
+        dir: "2",
+        id: "84"
     }
 ];
 
