@@ -502,6 +502,12 @@ var p2 = [
         hin: "गोविंद माधव स्तोत्र",
         dir: "2",
         id: "84"
+    },
+    {
+        eng: "hamako mana ki shakti",
+        hin: "हमको मन की शक्ति",
+        dir: "2",
+        id: "85"
     }
 ];
 
